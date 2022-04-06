@@ -2,7 +2,6 @@
 
 ## Fazer a estrutura 
 
-- 
 - [ ] Definir a organização dos arquivos
 - [ ] Criar o makefile
 - [ ] Classe Aluno
