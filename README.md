@@ -21,9 +21,8 @@
 
 
 ## Cadastrar o pedido de quebra
-- [ ] Leitura da Grade de BCC e IBM
+- [ ] Leitura da Grade de BCC
 - [ ] Importar arquivo .csv com o histórico do aluno
-- [ ] Fazer a interface gráfica para o aluno preencher a solicitação
 
 
 ## Verificar a situação do Aluno
@@ -36,4 +35,5 @@
 ## Gerar um arquivo texto com os dados atuais da quebra do aluno para editar depois
 
 ## Fazer interface gráfica
+- [ ] Fazer a interface gráfica para o aluno preencher a solicitação
 
