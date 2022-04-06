@@ -22,9 +22,9 @@
 ## Estrutura 
 
 - [ ] Classe Aluno
--         Matrícula 
--         Período Atual
--         IRA
+    - Matrícula 
+    - Período Atual
+    - IRA
 
  
 
