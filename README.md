@@ -29,7 +29,7 @@
 - [ ] Gera pdf do pedido de quebra
 
 
-## Gerar um arquivo texto com os dados do aluno para editar depois
+## Gerar um arquivo texto com os dados atuais da quebra do aluno para editar depois
 
 ## Fazer interface gráfica
 
