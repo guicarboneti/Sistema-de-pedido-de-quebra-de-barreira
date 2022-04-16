@@ -5,21 +5,59 @@
 - [ ] Definir a organização dos arquivos
 - [ ] Criar o makefile
 - [ ] Classe Aluno (Leticia)
-
   - Matrícula
   - Nome
   - Período Atual
   - IRA
+  - ArrayList materiasCursadas<materia>;
+  - Arraylist materiasMatriculado<materia>;
+  - Arraylist  materiasNaoCursadas<materia>;
+
+  Aluno {
+    matricula:
+    nome:
+    periodo atual:
+    materiasCursadas = [ materia 1, materia2 ] 
+    materiasMatriculado = [ materia 1, materia2 ] 
+    materiasNaoCursadas = [ materia 1, materia2 ] 
+    *Cada posição do arraylist é uma materia 
+  }
+
+  Funções:
+  - Get e Set para cada atributo (cadastra aluno)
+  - Get materiasCursadas por semestre
 
 - [ ] Classe Matéria (Guilherme)
+  - Codigo da Matéria 
+  - Nome da Matéria
+  - Carga horária
+  - Status (Reprovado por Nota, Reprovado por freq, Aprovado, Sem Status)
+  - (olhar o header na planilha para os camps)
 
-  - Array do período com uma lista de matérias (Grade)
-  - Atributos: estado de cada matéria (já cursado, matriculado, não cursado)
+  Funções:
+  - Get e Set para cada atributo (cadastra materia)
+
+- [ ] Classe Grade | Lista com as matérias do curso (Thiago)
+    - Array do período com uma lista de matérias (Grade)
+    
+    - Arraylist gradeBcc2019<materia>,
+    - Arraylist gradeBcc2011<materia>,
+    
+    Funções:
+      - Get e Set para cada atributo (cadastra grade)
+      - Aqui vou chamar a função de cadastro de nova materia()
+    
+
+- [ ] Classe Leitor 
+    Funções:
+    - Leitura de int,string,double... (Thiago)
+    - Le arquivo csv e adiciona no arraylist da GradeBcc2019 ou GradeBcc2011 (Thiago)
+    - Le o historico do aluno e chama funcao cadastra Aluno da classe Aluno
 
 - [ ] Classe Pedido de Quebra (armazenar os pedidos, para o aluno recuperar depois) (Cristiano)
-- [ ] Lista com as matérias do curso (Thiago)
-- [ ] Lista com as matérias cursadas
 
+- [ ] Classe Programa Principal
+    - é onde esta definido a Main do projeto.
 ## Cadastrar o pedido de quebra
 
 - [ ] Leitura da Grade de BCC
