@@ -9,9 +9,9 @@
   - Nome
   - Período Atual
   - IRA
-  - ArrayList materiasCursadas<materia>;
-  - Arraylist materiasMatriculado<materia>;
-  - Arraylist  materiasNaoCursadas<materia>;
+  - ArrayList materiasCursadas<'materia'>;
+  - Arraylist materiasMatriculado<'materia'>;
+  - Arraylist  materiasNaoCursadas<'materia'>;
 
   Aluno {
     matricula:
@@ -32,7 +32,7 @@
   - Nome da Matéria
   - Carga horária
   - Status (Reprovado por Nota, Reprovado por freq, Aprovado, Sem Status)
-  - (olhar o header na planilha para os camps)
+  - (olhar o header na planilha para os campos)
 
   Funções:
   - Get e Set para cada atributo (cadastra materia)
@@ -40,8 +40,8 @@
 - [ ] Classe Grade | Lista com as matérias do curso (Thiago)
     - Array do período com uma lista de matérias (Grade)
     
-    - Arraylist gradeBcc2019<materia>,
-    - Arraylist gradeBcc2011<materia>,
+    - Arraylist gradeBcc2019<'materia'>,
+    - Arraylist gradeBcc2011<'materia'>,
     
     Funções:
       - Get e Set para cada atributo (cadastra grade)
@@ -57,7 +57,7 @@
 - [ ] Classe Pedido de Quebra (armazenar os pedidos, para o aluno recuperar depois) (Cristiano)
 
 - [ ] Classe Programa Principal
-    - é onde esta definido a Main do projeto.
+    - É o lugar que está a Main do projeto.
 ## Cadastrar o pedido de quebra
 
 - [ ] Leitura da Grade de BCC
