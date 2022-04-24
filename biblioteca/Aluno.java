@@ -11,7 +11,7 @@ class Historico {
     private ArrayList<Materia> materiasCursadas;
     private ArrayList<Materia> materiasMatriculadas;
     private ArrayList<Materia> materiasNaoCursadas;
-
+ 
     // public void preencheHistorico() {
     // FileReader filereader = new FileReader(arquivo);
 
@@ -22,7 +22,7 @@ class Historico {
 
     // // matricula, nome, codCUrso, nomeCurso, versao, ano, medialFinal,
     // situacaoItem,
-    // // periodo, status, cod, nomeMateria, ch_total, tipo, frequencia
+    // // periodo, status, cod, nomeMateria, chTotal, tipo, frequencia
 
     // }
 }

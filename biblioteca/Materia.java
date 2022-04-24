@@ -1,23 +1,23 @@
 package biblioteca;
 public class Materia {
-    private String cod_curso;
-    private String num_versao;
-    private String cod_disciplina;
+    private String codCurso;
+    private String numVersao;
+    private String codDisciplina;
     private String nome;
     private int periodo;
-    private int num_horas;
-    private String tipo_disciplina;
-    private int ch_total;
+    private int numHoras;
+    private String tipoDisciplina;
+    private int chTotal;
     private String status;
 
-    public void setCodCurso(String cod_curso) {
-        this.cod_curso = cod_curso;
+    public void setCodCurso(String codCurso) {
+        this.codCurso = codCurso;
     }
-    public void setNumVersao(String num_versao) {
-        this.num_versao = num_versao;
+    public void setNumVersao(String numVersao) {
+        this.numVersao = numVersao;
     }
-    public void setCodDisciplina(String cod_disciplina) {
-        this.cod_disciplina = cod_disciplina;
+    public void setCodDisciplina(String codDisciplina) {
+        this.codDisciplina = codDisciplina;
     }
     public void setNome(String nome) {
         this.nome = nome;
@@ -25,27 +25,27 @@ public class Materia {
     public void setPeriodo(int periodo) {
         this.periodo = periodo;
     }
-    public void setNumHoras(int num_horas) {
-        this.num_horas = num_horas;
+    public void setNumHoras(int numHoras) {
+        this.numHoras = numHoras;
     }
-    public void setTipoDisciplina(String tipo_disciplina) {
-        this.tipo_disciplina = tipo_disciplina;
+    public void setTipoDisciplina(String tipoDisciplina) {
+        this.tipoDisciplina = tipoDisciplina;
     }
-    public void setChTotal(int ch_total) {
-        this.ch_total = ch_total;
+    public void setChTotal(int chTotal) {
+        this.chTotal = chTotal;
     }
     public void setStatus(String status) {
         this.status = status;
     }
 
     public String getCodCurso() {
-        return this.cod_curso;
+        return this.codCurso;
     }
     public String getNumVersao() {
-        return this.num_versao;
+        return this.numVersao;
     }
     public String getCodDisciplina() {
-        return this.cod_disciplina;
+        return this.codDisciplina;
     }
     public String getNome() {
         return this.nome;
@@ -54,27 +54,27 @@ public class Materia {
         return this.periodo;
     }
     public int getNumHoras() {
-        return this.num_horas;
+        return this.numHoras;
     }
     public String getTipoDisciplina() {
-        return this.tipo_disciplina;
+        return this.tipoDisciplina;
     }
     public int getChTotal() {
-        return this.ch_total;
+        return this.chTotal;
     }
     public String getStatus() {
         return this.status;
     }
 
-    public Materia(String cod_curso, String num_versao, String cod_disciplina, String nome, int periodo, int num_horas, String tipo_disciplina, int ch_total, String status) {
-        setCodCurso(cod_curso);
-        setNumVersao(num_versao);
-        setCodDisciplina(cod_disciplina);
+    public Materia(String codCurso, String numVersao, String codDisciplina, String nome, int periodo, int numHoras, String tipoDisciplina, int chTotal, String status) {
+        setCodCurso(codCurso);
+        setNumVersao(numVersao);
+        setCodDisciplina(codDisciplina);
         setNome(nome);
         setPeriodo(periodo);
-        setNumHoras(num_horas);
-        setTipoDisciplina(tipo_disciplina);
-        setChTotal(ch_total);
+        setNumHoras(numHoras);
+        setTipoDisciplina(tipoDisciplina);
+        setChTotal(chTotal);
         setStatus(status);
     }
 
