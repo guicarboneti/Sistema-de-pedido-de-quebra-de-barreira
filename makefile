@@ -4,7 +4,7 @@ JC = javac
 .java.class:
 		$(JC) $(JFLAGS) $*.java
 
-CLASSES = biblioteca/Aluno.java biblioteca/Leitor.java biblioteca/Grade.java biblioteca/Materia.java biblioteca/PedidoQuebra.java ProgramaPrincipal.java
+CLASSES = biblioteca/Aluno.java biblioteca/Leitor.java biblioteca/Grade.java biblioteca/Materia.java biblioteca/Historico.java biblioteca/PedidoQuebra.java ProgramaPrincipal.java
 
 default: classes
 

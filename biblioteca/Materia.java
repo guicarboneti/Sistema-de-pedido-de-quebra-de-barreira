@@ -8,7 +8,12 @@ public class Materia {
     private int numHoras;
     private String tipoDisciplina;
     private int chTotal;
-    private String status;
+    private String situacao;
+    private int cursadaEm;
+    private int situacaoItem;
+    private int frequencia;
+    private double mediaFinal;
+    private String situacaoFreq;
 
     public void setCodCurso(String codCurso) {
         this.codCurso = codCurso;
@@ -34,9 +39,25 @@ public class Materia {
     public void setChTotal(int chTotal) {
         this.chTotal = chTotal;
     }
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
+    public void setCursadaEm(int cursadaEm) {
+        this.cursadaEm = cursadaEm;
+    }
+    public void setSituacaoItem(int situacaoItem) {
+        this.situacaoItem = situacaoItem;
+    }
+    public void setFrequencia(int frequencia) {
+        this.frequencia = frequencia;
+    }
+    public void setMediaFinal(double mediaFinal) {
+        this.mediaFinal = mediaFinal;
+    }
+    public void setSituacaoFreq(String situacaoFreq) {
+        this.situacaoFreq = situacaoFreq;
+    }
+
 
     public String getCodCurso() {
         return this.codCurso;
@@ -62,11 +83,27 @@ public class Materia {
     public int getChTotal() {
         return this.chTotal;
     }
-    public String getStatus() {
-        return this.status;
+    public String getSituacao() {
+        return this.situacao;
     }
+    public int getCursadaEm() {
+        return this.cursadaEm;
+    }
+    public int getSituacaoItem() {
+        return this.situacaoItem;
+    }
+    public int getFrequencia() {
+        return this.frequencia;
+    }
+    public double getMediaFinal() {
+        return this.mediaFinal;
+    }
+    public String getSituacaoFreq() {
+        return this.situacaoFreq;
+    }
+    public Materia(){}
 
-    public Materia(String codCurso, String numVersao, String codDisciplina, String nome, int periodo, int numHoras, String tipoDisciplina, int chTotal, String status) {
+    public Materia(String codCurso, String numVersao, String codDisciplina, String nome, int periodo, int numHoras, String tipoDisciplina, int chTotal, String situacao) {
         setCodCurso(codCurso);
         setNumVersao(numVersao);
         setCodDisciplina(codDisciplina);
@@ -75,7 +112,23 @@ public class Materia {
         setNumHoras(numHoras);
         setTipoDisciplina(tipoDisciplina);
         setChTotal(chTotal);
-        setStatus(status);
+        setSituacao(situacao);
     }
+
+    public Materia(String numVersao, int cursadaEm, int mediaFinal, int situacaoItem, int periodo, String situacao, String codDisciplina, String nome, int chTotal,String tipoDisciplina, int frequencia, String situacaoFreq) {
+        setNumVersao(numVersao);
+        setCursadaEm(cursadaEm);
+        setMediaFinal(mediaFinal);
+        setSituacaoItem(situacaoItem);
+        setPeriodo(periodo);
+        setSituacao(situacao);
+        setCodDisciplina(codDisciplina);
+        setNome(nome);
+        setChTotal(chTotal);
+        setTipoDisciplina(tipoDisciplina);
+        setFrequencia(frequencia);
+        setSituacaoFreq(situacaoFreq);
+    }
+
 
 }

@@ -1,37 +1,9 @@
 package biblioteca;
 
-// import com.opencsv.CSVReader;
-import java.io.*;
-import java.util.*;
-// import lombok.AllArgsConstructor;
-// import lombok.Getter;
-// import lombok.ToString;
-
-class Historico {
-    private ArrayList<Materia> materiasCursadas;
-    private ArrayList<Materia> materiasMatriculadas;
-    private ArrayList<Materia> materiasNaoCursadas;
- 
-    // public void preencheHistorico() {
-    // FileReader filereader = new FileReader(arquivo);
-
-    // CSVReader csvReader - new CSVReader(filereader);
-    // String[] nextRecord;
-
-    // while((nextRecord))
-
-    // // matricula, nome, codCUrso, nomeCurso, versao, ano, medialFinal,
-    // situacaoItem,
-    // // periodo, status, cod, nomeMateria, chTotal, tipo, frequencia
-
-    // }
-}
-
 public class Aluno {
-    // class Alunoo {
     private String nome;
     private int periodoAtual;
-    private int ira;
+    private double ira;
     private Historico historico;
 
     public void setNome(String nome) {
@@ -42,7 +14,7 @@ public class Aluno {
         this.periodoAtual = periodo;
     }
 
-    public void setIra(int ira) {
+    public void setIra(double ira) {
         this.ira = ira;
     }
 
@@ -54,28 +26,27 @@ public class Aluno {
         return this.periodoAtual;
     }
 
-    public int getIra() {
+    public double getIra() {
         return this.ira;
     }
+
+    public Aluno(){}
+
+    public Aluno(String nome,int periodoAtual, String file){
+        this.historico = new Historico(file);
+        this.nome = nome;
+        this.periodoAtual = periodoAtual;
+        this.ira = this.historico.getIra();
+    }
+
+    public void imprimeAluno(){
+        System.out.println("=========== Dados do Aluno ===========");
+
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Período Atual: " + this.periodoAtual);
+        System.out.println("Ira: " + this.ira);
+        this.historico.imprimeMateriasCursadas();
+        this.historico.imprimeMateriasMatriculadas();
+        this.historico.imprimeMateriasUltimoPeriodo();
+    }
 }
-
-// public class Aluno {
-// public static void main(String[] args) {
-// try {
-// String filePath = "historico.csv";
-// FileReader fileReader = new FileReader(filePath);
-
-// CSVReader openCsvReader = new CSVReader(fileReader);
-// String[] record;
-
-// while ((record = openCsvReader.readNext()) != null) {
-// for (String token : record) {
-// System.out.print(token + "\t");
-// }
-// System.out.println();
-// }
-// } catch (IOException e) {
-// e.printStackTrace();
-// }
-// }
-// }
