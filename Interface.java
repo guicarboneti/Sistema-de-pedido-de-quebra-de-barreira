@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
+import javax.swing.JFileChooser;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JList;
@@ -12,8 +13,15 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.awt.Font;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class Interface {
 
@@ -22,6 +30,7 @@ public class Interface {
     private JTextField textField_1;
     private JTextField textField_2;
     private final JPanel panel = new JPanel();
+    private JTextField textField_3;
 
     /**
      * Launch the application.
@@ -96,11 +105,22 @@ public class Interface {
         lblHistrico.setBounds(640, 291, 117, 29);
         frame.getContentPane().add(lblHistrico);
 
-        // ARRUMAR - IMPORTAR DOCUMENTO
+        // Mostra o caminho que foi guardado
         textField_2 = new JTextField();
-        textField_2.setBounds(765, 288, 165, 35);
+        textField_2.setBounds(866, 288, 85, 35);
         frame.getContentPane().add(textField_2);
         textField_2.setColumns(10);
+
+        JButton btnBuscar = new JButton("Buscar");
+        btnBuscar.setBounds(765, 288, 100, 35);
+        frame.getContentPane().add(btnBuscar);
+
+        ActionListener busca = new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                procuraArquivo();
+            }
+        };
+        btnBuscar.addActionListener(busca);
 
         // -------------------------------
 
@@ -282,5 +302,25 @@ public class Interface {
         panel.setBackground(SystemColor.activeCaption);
         panel.setBounds(0, 0, 1324, 153);
         frame.getContentPane().add(panel);
+    }
+
+    public void procuraArquivo() {
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("Arquivos .csv", "csv");
+
+        String diretorioBase = System.getProperty("user.home");
+        File dir = new File(diretorioBase);
+
+        JFileChooser choose = new JFileChooser();
+        choose.setCurrentDirectory(dir);
+        choose.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        choose.setAcceptAllFileFilterUsed(false);
+        choose.addChoosableFileFilter(filtro);
+        String caminhoArquivo = "";
+
+        int retorno = choose.showSaveDialog(null);
+        if (retorno == JFileChooser.APPROVE_OPTION) {
+            caminhoArquivo = choose.getSelectedFile().getAbsolutePath();
+            textField_2.setText(caminhoArquivo);
+        }
     }
 }
