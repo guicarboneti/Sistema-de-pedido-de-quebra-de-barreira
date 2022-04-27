@@ -63,10 +63,10 @@
   - Arraylist materiasMatriculado<'materia'>;
   - Arraylist materiasNaoCursadas<'materia'>;
 
-  - [ ] Classe VerificaSituacaoAluno
+- [ ] Classe VerificaSituacaoAluno
 
-    - classe irá verificar qual a possível situação do aluno com base em seu histórico e regras de quebra de barreira
-    - retorna qual essa situação
+  - classe irá verificar qual a possível situação do aluno com base em seu histórico e regras de quebra de barreira;
+  - retorna qual essa situação;
 
   Historico {
   materiasCursadas = [ materia 1, materia2 ]
