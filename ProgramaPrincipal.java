@@ -15,5 +15,9 @@ public class ProgramaPrincipal {
         Aluno aluno = new Aluno("Thiago",5,"planilhas/exemplo_trabalho_TAP_historico.csv");
         aluno.imprimeAluno();
 
+        // RegrasColegiado regrasColegiado = new RegrasColegiado();
+        // if (regrasColegiado.testaRegras(aluno, pedidoQuebra))
+        //     defineMateriasQuebradas(aluno, pedidoQuebra)
+
     }
 }
