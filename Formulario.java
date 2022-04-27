@@ -15,6 +15,7 @@ import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 
 import java.awt.Font;
 import java.awt.FlowLayout;
@@ -26,7 +27,7 @@ import javax.swing.Action;
 
 import java.util.ArrayList;
 
-public class Interface {
+public class Formulario {
 
     private JFrame frame;
     private JTextField textNome;
@@ -57,8 +58,12 @@ public class Interface {
     private JCheckBox chckbxCi_22;
     private JCheckBox chckbxCi_23;
     private JCheckBox chckbxCi_24;
+    private JCheckBox cB_Grade1;
+    private JCheckBox cB_Grade2;
+    private String gradeAtual;
     private final JPanel panel = new JPanel();
     private ArrayList<String> materiasSolicitadas = new ArrayList<String>();
+    JScrollPane scroll = new JScrollPane(this.panel);
 
     /**
      * Launch the application.
@@ -67,7 +72,7 @@ public class Interface {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Interface window = new Interface();
+                    Formulario window = new Formulario();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -79,7 +84,7 @@ public class Interface {
     /**
      * Create the application.
      */
-    public Interface() {
+    public Formulario() {
         initialize();
     }
 
@@ -94,8 +99,11 @@ public class Interface {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
+        JScrollPane scroll = new JScrollPane();
+        scroll.setBounds(1275, 100, 10, 990);
+
         JLabel lblNome = new JLabel("Nome: ");
-        lblNome.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblNome.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
         lblNome.setForeground(SystemColor.activeCaption);
         lblNome.setBounds(50, 209, 100, 29);
         frame.getContentPane().add(lblNome);
@@ -106,7 +114,8 @@ public class Interface {
         textNome.setColumns(10);
 
         JLabel lblGrr = new JLabel("GRR:");
-        lblGrr.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblGrr.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
+        lblGrr.setForeground(SystemColor.activeCaption);
         lblGrr.setBounds(795, 209, 70, 29);
         frame.getContentPane().add(lblGrr);
 
@@ -116,23 +125,25 @@ public class Interface {
         textGrr.setColumns(10);
 
         JLabel lblGradeQueEst = new JLabel("Grade que está matriculado:");
-        lblGradeQueEst.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblGradeQueEst.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
+        lblGradeQueEst.setForeground(SystemColor.activeCaption);
         lblGradeQueEst.setBounds(56, 291, 318, 29);
         frame.getContentPane().add(lblGradeQueEst);
 
-        JCheckBox checkBox = new JCheckBox("2011");
-        checkBox.setBackground(Color.WHITE);
-        checkBox.setHorizontalAlignment(SwingConstants.LEFT);
-        checkBox.setBounds(379, 294, 70, 23);
-        frame.getContentPane().add(checkBox);
+        cB_Grade1 = new JCheckBox("2011");
+        cB_Grade1.setBackground(Color.WHITE);
+        cB_Grade1.setHorizontalAlignment(SwingConstants.LEFT);
+        cB_Grade1.setBounds(379, 294, 70, 23);
+        frame.getContentPane().add(cB_Grade1);
 
-        JCheckBox checkBox_1 = new JCheckBox("2019");
-        checkBox_1.setBackground(Color.WHITE);
-        checkBox_1.setBounds(484, 294, 70, 23);
-        frame.getContentPane().add(checkBox_1);
+        cB_Grade2 = new JCheckBox("2019");
+        cB_Grade2.setBackground(Color.WHITE);
+        cB_Grade2.setBounds(484, 294, 70, 23);
+        frame.getContentPane().add(cB_Grade2);
 
         JLabel lblHistrico = new JLabel("Histórico:");
-        lblHistrico.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblHistrico.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
+        lblHistrico.setForeground(SystemColor.activeCaption);
         lblHistrico.setBounds(640, 291, 120, 29);
         frame.getContentPane().add(lblHistrico);
 
@@ -167,7 +178,7 @@ public class Interface {
 
         JLabel lblQuaisDisciplinasVoc = new JLabel("Quais disciplinas você quer solicitar quebra?");
         lblQuaisDisciplinasVoc.setForeground(SystemColor.activeCaption);
-        lblQuaisDisciplinasVoc.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblQuaisDisciplinasVoc.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
         lblQuaisDisciplinasVoc.setBounds(56, 366, 443, 29);
         frame.getContentPane().add(lblQuaisDisciplinasVoc);
 
@@ -298,29 +309,29 @@ public class Interface {
 
         JLabel lblSemConflito = new JLabel(
                 "Tem condições de se matricular nesta(s) disciplina(s), sem colisão de horário com disciplinas já matriculado?");
-        lblNome.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblSemConflito.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
         lblSemConflito.setForeground(SystemColor.activeCaption);
         lblSemConflito.setBounds(56, 666, 1124, 58);
         frame.getContentPane().add(lblSemConflito);
 
         JCheckBox checkBox_4 = new JCheckBox("Sim");
         checkBox_4.setBackground(Color.WHITE);
-        checkBox_4.setBounds(269, 699, 58, 23);
+        checkBox_4.setBounds(59, 720, 58, 23);
         frame.getContentPane().add(checkBox_4);
 
         JCheckBox checkBox_5 = new JCheckBox("Não");
         checkBox_5.setBackground(Color.WHITE);
-        checkBox_5.setBounds(354, 699, 62, 23);
+        checkBox_5.setBounds(120, 720, 62, 23);
         frame.getContentPane().add(checkBox_5);
 
         JLabel lblJustificativa = new JLabel("Justifique seus pedidos e informe a");
-        lblJustificativa.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblJustificativa.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
         lblJustificativa.setForeground(SystemColor.activeCaption);
         lblJustificativa.setBounds(807, 366, 460, 29);
         frame.getContentPane().add(lblJustificativa);
 
         JLabel lblPrioridade = new JLabel("ordem de prioridade de cada uma:");
-        lblPrioridade.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 24));
+        lblPrioridade.setFont(new Font("DejaVu Sans Condensed", Font.BOLD, 19));
         lblPrioridade.setForeground(SystemColor.activeCaption);
         lblPrioridade.setBounds(809, 402, 450, 29);
         frame.getContentPane().add(lblPrioridade);
@@ -332,7 +343,7 @@ public class Interface {
                 JOptionPane.showMessageDialog(null, "Pedido enviado! FAZER OUTRA TELA ." + materiasSolicitadas);
             }
         });
-        btnEnviarPedido.setBounds(507, 788, 282, 67);
+        btnEnviarPedido.setBounds(507, 768, 282, 70);
         frame.getContentPane().add(btnEnviarPedido);
 
         JTextArea textArea = new JTextArea();
@@ -343,6 +354,9 @@ public class Interface {
         panel.setBackground(SystemColor.activeCaption);
         panel.setBounds(0, 0, 1324, 153);
         frame.getContentPane().add(panel);
+
+        // scroll.setViewportView(panel);
+        // frame.add(scroll);
     }
 
     public void procuraArquivo() {
@@ -410,5 +424,17 @@ public class Interface {
             this.materiasSolicitadas.add("CI1100");
         if (this.chckbxCi_21.isSelected())
             this.materiasSolicitadas.add("______");
+    }
+
+    public void guardaGradeAtual() {
+        if (this.cB_Grade1.isSelected()) {
+            this.gradeAtual = "2011";
+        } else {
+            this.gradeAtual = "2019";
+        }
+    }
+
+    public String getGradeAtual() {
+        return this.gradeAtual;
     }
 }
