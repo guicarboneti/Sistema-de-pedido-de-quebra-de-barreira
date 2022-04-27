@@ -170,10 +170,35 @@ public class Historico {
     }
 
     public int getAprovacaoUltimoPeriodo() {
-        return 100;
+        private int cont;
+
+        for (Materia m : this.materiasUltimoPeriodo) {
+            if (m.getSituacao.equals("Aprovado"))
+                cont++;
+        }
+        return cont;
     }
 
     public int getQtdReprovacaoFalta() {
-        return 100;
+        int cont;
+
+        for (Materia m : this.materiasUltimoPeriodo) {
+            if (m.getSituacao.equals("Reprovado por Frequência"))
+                cont++;
+        }
+        return cont;
+    }
+
+    public String getDesempenhoUltPeriodo() {
+        String desempenho;
+
+        if (this.getAprovacaoUltimoPeriodo() > (2/3))
+            desempenho = "Bom";
+        else if ((this.getAprovacaoUltimoPeriodo() >= (1/2)) && (this.getAprovacaoUltimoPeriodo() <= (2/3)))
+            desempenho = "Medio";
+        else if (this.getAprovacaoUltimoPeriodo() < (1/2))
+            desempenho = "Ruim";
+
+        return desempenho;
     }
 }
