@@ -107,11 +107,11 @@ public class Historico {
         return 100;
     }
 
-    public int getAprovacaoUltimoPeriodo() {
-        private int cont;
+    public float getAprovacaoUltimoPeriodo() {
+        float cont=0;
 
         for (Materia m : this.materiasUltimoPeriodo) {
-            if (m.getSituacao.equals("Aprovado"))
+            if (m.getSituacao().equals("Aprovado"))
                 cont++;
         }
         return cont;
@@ -121,7 +121,7 @@ public class Historico {
         int cont;
 
         for (Materia m : this.materiasUltimoPeriodo) {
-            if (m.getSituacao.equals("Reprovado por Frequência"))
+            if (m.getSituacao().equals("Reprovado por Frequência"))
                 cont++;
         }
         return cont;
@@ -130,11 +130,11 @@ public class Historico {
     public String getDesempenhoUltPeriodo() {
         String desempenho;
 
-        if (this.getAprovacaoUltimoPeriodo() > (2/3))
+        if (this.getAprovacaoUltimoPeriodo() > (2*this.materiasCursadas.size()/3))
             desempenho = "Bom";
-        else if ((this.getAprovacaoUltimoPeriodo() >= (1/2)) && (this.getAprovacaoUltimoPeriodo() <= (2/3)))
+        else if ((this.getAprovacaoUltimoPeriodo() >= (this.materiasCursadas.size()/2)) && (this.getAprovacaoUltimoPeriodo() <= (2*this.materiasCursadas.size()/3)))
             desempenho = "Medio";
-        else if (this.getAprovacaoUltimoPeriodo() < (1/2))
+        else if (this.getAprovacaoUltimoPeriodo() < (this.materiasCursadas.size()/2))
             desempenho = "Ruim";
 
         return desempenho;
