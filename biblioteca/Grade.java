@@ -53,4 +53,8 @@ public class Grade {
         }
     }
 
+    public ArrayList<Materia> getGradeBcc(){
+        return this.gradeBcc;
+    }
+
 }

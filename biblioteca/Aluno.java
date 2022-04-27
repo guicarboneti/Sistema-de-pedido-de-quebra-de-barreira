@@ -30,6 +30,11 @@ public class Aluno {
         return this.ira;
     }
 
+    public Historico getHistorico() {
+        return this.historico;
+    }
+
+
     public Aluno(){}
 
     public Aluno(String nome,int periodoAtual, String file){

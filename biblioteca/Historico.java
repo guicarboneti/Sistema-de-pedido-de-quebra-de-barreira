@@ -12,6 +12,8 @@ public class Historico {
     private ArrayList<Materia> materiasCursadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasMatriculadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasUltimoPeriodo = new ArrayList<Materia>();
+    // ArrayPeriodos = [ [ ArrayList do 1º período ],[ ArrayList do 2º período ],[ ArrayList do 3º período ] ] 
+    ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia> >(3);
 
     public Historico(String file) {
         try {
@@ -102,9 +104,69 @@ public class Historico {
             System.out.println("Matéria: " + m.getNome());
         }
     }
+    
+    // public void imprimeGradeAluno(){
+
+    //     for (int i = 0; i < gradeAluno.size(); i++) {
+    //         for (int j = 0; j < gradeAluno.get(i).size(); j++) {
+    //             System.out.print(gradeAluno.get(i).get(j) + " ");
+    //         }
+    //         System.out.println();
+    //     }
+    // }
 
     public double getIra() {
-        return 100;
+        double notasTotal = 0;
+        int cargaHorariaTotal = 0;
+
+        for (Materia m : this.materiasCursadas) {
+            notasTotal = notasTotal + m.getChTotal() * m.getMediaFinal();
+            cargaHorariaTotal = cargaHorariaTotal + m.getChTotal();
+        }
+
+        return (notasTotal / (cargaHorariaTotal * 100));
+    }
+
+    public Materia getMateriaAluno(String codigo) {
+        Materia retornoNull = new Materia();
+
+        for (Materia m : this.materiasCursadas) {
+            if(m.getCodDisciplina().equals(codigo))
+                return m;
+        }
+        return retornoNull;
+    }
+
+    public void setGradeAluno(Grade grade){
+        Materia materiaAux;
+
+        ArrayList<Materia> periodo1 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo2 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo3 = new ArrayList<Materia>();
+
+        for (Materia m : grade.getGradeBcc()) {
+
+            materiaAux = getMateriaAluno(m.getCodDisciplina());
+            if((materiaAux.getCodDisciplina().isEmpty()) || (materiaAux.getCodDisciplina() == null))
+                    materiaAux = m; 
+
+            switch (materiaAux.getPeriodo()){
+            case 1:
+                periodo2.add(materiaAux);
+                break;
+            case 2:
+
+                periodo2.add(materiaAux);
+                break;
+            case 3:
+                periodo3.add(materiaAux);
+                break;
+            }
+        }
+
+        this.gradeAluno.add(periodo1);
+        this.gradeAluno.add(periodo2);
+        this.gradeAluno.add(periodo3);
     }
 
     public int getAprovacaoUltimoPeriodo() {
