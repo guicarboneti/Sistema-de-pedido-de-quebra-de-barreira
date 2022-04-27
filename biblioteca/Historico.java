@@ -4,7 +4,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
-
 public class Historico {
     private static Scanner input;
 
@@ -180,7 +179,7 @@ public class Historico {
     }
 
     public int getQtdReprovacaoFalta() {
-        int cont;
+        int cont = 0;
 
         for (Materia m : this.materiasUltimoPeriodo) {
             if (m.getSituacao().equals("Reprovado por Frequência"))
@@ -190,7 +189,7 @@ public class Historico {
     }
 
     public String getDesempenhoUltPeriodo() {
-        String desempenho;
+        String desempenho = "";
 
         if (this.getAprovacaoUltimoPeriodo() > (2*this.materiasCursadas.size()/3))
             desempenho = "Bom";

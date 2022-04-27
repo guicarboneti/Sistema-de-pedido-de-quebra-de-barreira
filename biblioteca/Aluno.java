@@ -34,10 +34,6 @@ public class Aluno {
         return this.historico;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8021814cb80124d9a75bb8053dc33ac281d941c1
     public Aluno(){}
 
     public Aluno(String nome,int periodoAtual, String file){
