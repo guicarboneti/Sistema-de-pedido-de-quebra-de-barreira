@@ -22,6 +22,10 @@ CRISTIANO
 - [ ] O sistema deve permitir salvar os dados do pedido em um arquivo de forma a permitir que o aluno os edite posteriormente.
 
 
+OUTROS
+- [ ] Implementar algum padrão visto em aula
+
+
 TELAS
 - TELA DE SOLICITAÇÃO
 - TELA DE GRADE BCC DO ALUNO
