@@ -1,8 +1,6 @@
 package biblioteca;
 
 import java.io.*;
-import java.nio.file.Paths;
-import java.util.Scanner;
 
 public class Leitor {
     private BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));

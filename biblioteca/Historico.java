@@ -114,6 +114,10 @@ public class Historico {
     //     }
     // }
 
+    public ArrayList<Materia> getMateriasCursadas() {
+        return materiasCursadas;
+    }
+
     public double getIra() {
         double notasTotal = 0;
         int cargaHorariaTotal = 0;
