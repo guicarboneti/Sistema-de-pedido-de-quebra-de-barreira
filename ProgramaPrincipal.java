@@ -1,5 +1,6 @@
 import biblioteca.Aluno;
 import biblioteca.Grade;
+import biblioteca.RegrasColegiado;
 
 public class ProgramaPrincipal {
 
@@ -17,7 +18,7 @@ public class ProgramaPrincipal {
 
         // RegrasColegiado regrasColegiado = new RegrasColegiado();
         // if (regrasColegiado.testaRegras(aluno, pedidoQuebra))
-        //     defineMateriasQuebradas(aluno, pedidoQuebra)
+        //     System.out.println("Podem ser concedidas " + regrasColegiado.getNumMaterias(aluno) + " matrículas");
 
     }
 }

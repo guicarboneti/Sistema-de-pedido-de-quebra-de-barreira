@@ -11,7 +11,7 @@ public class RegrasColegiado {
         this.desempenho = desempenho;
     }
 
-    public void getNumMaterias(Aluno aluno) {
+    public String getNumMaterias(Aluno aluno) {
         setDesempenho(aluno.getHistorico().getDesempenhoUltPeriodo());
         if (aluno.getHistorico().getIra() > 0.8)
             setnumMaterias("Todos os pedidos de matrícula serão aceitos");
@@ -21,6 +21,8 @@ public class RegrasColegiado {
             setnumMaterias("4");
         else if (this.desempenho.equals("Ruim"))
             setnumMaterias("3");
+
+        return this.numMaterias;
     }
 
     public Boolean cursouMateria(Aluno aluno, String codDisciplina) {
@@ -31,18 +33,19 @@ public class RegrasColegiado {
         return false;
     }
 
-    // retorna 0 caso alguma regra é quebrada e imprime o erro. retorna 1 caso contrário
-    public int testaRegras(Aluno aluno, PedidoQuebra pedidoQuebra) {
+    // retorna false caso alguma regra é quebrada e imprime o erro. Retorna true caso contrário
+    public Boolean testaRegras(Aluno aluno, PedidoQuebra pedidoQuebra) {
         for (Materia m : pedidoQuebra.getMateriasSolicitadas()) {
             if (m.getCodDisciplina().equals("CI215") && !cursouMateria(aluno, "CI212")) {
                 System.out.println("Não é concedida quebra de CI212 para CI215");
-                return 0;
+                return false;
             }
             else if (!m.getTipoDisciplina().equals("Obrigatórias")) {
                 System.out.println("Não é concedida quebra para optativas");
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
+
 }
