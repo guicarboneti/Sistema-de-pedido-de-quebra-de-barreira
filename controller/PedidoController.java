@@ -6,40 +6,38 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class PedidoController implements ActionListener{
-	private JTextField textNome;
+public class PedidoController implements ActionListener {
+    private JTextField textNome;
     private JTextField textGrr;
     private JTextField textCaminho;
-    private JTextField textJustificativa;
+    private JTextArea textJustificativa;
     private JTextField textPeriodoAtual;
-	
-	
-    
-	public PedidoController(JTextField textNome, JTextField textGrr,
-			JTextField textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho) {
-		this.textNome = textNome;
-		this.textGrr = textGrr;
-		this.textCaminho = textCaminho;
-		this.textJustificativa = textJustificativa;
-		this.textPeriodoAtual = textPeriodoAtual;
-	}
 
+    public PedidoController(JTextField textNome, JTextField textGrr,
+            JTextArea textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho) {
+        this.textNome = textNome;
+        this.textGrr = textGrr;
+        this.textCaminho = textCaminho;
+        this.textJustificativa = textJustificativa;
+        this.textPeriodoAtual = textPeriodoAtual;
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		String cmd = e.getActionCommand();
-		if(cmd.equals("Buscar")) {
-			procuraArquivo();
-		}
-		if(cmd.equals("Enviar Pedido")) {
-			enviar();
-		}
-	}
-	
-	public void procuraArquivo() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String cmd = e.getActionCommand();
+        if (cmd.equals("Buscar")) {
+            procuraArquivo();
+        }
+        if (cmd.equals("Enviar Pedido")) {
+            enviar();
+        }
+    }
+
+    public void procuraArquivo() {
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Arquivos .csv", "csv");
 
         String diretorioBase = System.getProperty("user.home");
@@ -58,13 +56,13 @@ public class PedidoController implements ActionListener{
             textCaminho.setText(caminhoArquivo);
         }
     }
-	
-	private void enviar() {
-		JOptionPane.showMessageDialog(null, "Pedido enviado! FAZER OUTRA TELA.");
+
+    private void enviar() {
+        JOptionPane.showMessageDialog(null, "Pedido enviado! FAZER OUTRA TELA.");
         textNome.setText("");
         textGrr.setText("");
         textCaminho.setText("");
         textJustificativa.setText("");
         textPeriodoAtual.setText("");
-	}
+    }
 }
