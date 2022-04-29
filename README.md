@@ -8,12 +8,12 @@ conjunto de disciplinas que ele deseja cursar com informação sobre a prioridad
 - [ ] Interface gráfica do restante das telas
 
 THIAGO
-- [ ] Cálculo do IRA do aluno com base no histórico 
+- [x] Cálculo do IRA do aluno com base no histórico 
 - [ ] O sistema deverá então apresentar uma tabela com as matérias cursadas por período e as
 matérias que faltam cursar para a barreira (TELA DE GRADE BCC DO ALUNO)
 
 GUILHERME
-- [ ] O sistema deverá calcular o número de disciplinas sugerido pelas regras aprovadas em colegiado e mostrar este resultado (TELA DE DISCIPLINAS SUGERIDAS)
+- [ ] O sistema deverá calcular o número de disciplinas sugerido pelas regras aprovadas em colegiado e mostrar este resultado (TELA DE NÚMERO DE DISCIPLINAS SUGERIDAS)
 - [ ] O sistema deverá mostra ao aluno o conjunto de disciplinas ofertadas neste semestre que não foram cursadas neste semestre por ordem de período 
 (TELA DE DISCIPLINAS OFERTADAS)
 
@@ -29,12 +29,13 @@ OUTROS
 TELAS
 - TELA DE SOLICITAÇÃO
 - TELA DE GRADE BCC DO ALUNO
-- TELA DE DISCIPLINAS SUGERIDAS
-- TELA DE DISCIPLINAS OFERTADAS
+- TELA DE NÚMERO DE DISCIPLINAS SUGERIDAS
+- TELA DE DISCIPLINAS OFERTADAS (Perguntar pro Andrey)
 - TELA GERANDO ARQUIVO TEXTO
 
-FLUXO
-TELA DA GRADE DE BCC DO ALUNO -> TELA DE DISCIPLINAS OFERTADAS -> TELA DE DISCIPLINAS SUGERIDAS -> TELA DE SOLICATAÇÃO -> TELA GERANDO ARQUIVO TEXTO
+FLUXO (REVER)
+
+- TELA DA GRADE DE BCC DO ALUNO -> TELA DE DISCIPLINAS OFERTADAS -> TELA DE NÚMERO DE DISCIPLINAS SUGERIDAS -> TELA DE SOLICATAÇÃO -> TELA GERANDO ARQUIVO TEXTO
 
 ## Fazer a estrutura
 

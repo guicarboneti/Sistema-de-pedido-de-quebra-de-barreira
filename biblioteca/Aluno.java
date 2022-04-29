@@ -30,23 +30,30 @@ public class Aluno {
         return this.ira;
     }
 
+    public Historico getHistorico() {
+        return this.historico;
+    }
+
     public Aluno(){}
 
-    public Aluno(String nome,int periodoAtual, String file){
-        this.historico = new Historico(file);
+    public Aluno(String nome,int periodoAtual, String file, Grade grade){
+        this.historico = new Historico(file, grade);
         this.nome = nome;
         this.periodoAtual = periodoAtual;
         this.ira = this.historico.getIra();
     }
 
-    public void imprimeAluno(){
+    public void imprimeAluno(Grade grade){
         System.out.println("=========== Dados do Aluno ===========");
 
         System.out.println("Nome: " + this.nome);
         System.out.println("Período Atual: " + this.periodoAtual);
         System.out.println("Ira: " + this.ira);
+
         this.historico.imprimeMateriasCursadas();
         this.historico.imprimeMateriasMatriculadas();
         this.historico.imprimeMateriasUltimoPeriodo();
+        this.historico.imprimeGradeAluno();
+
     }
 }

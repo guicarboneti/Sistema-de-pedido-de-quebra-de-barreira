@@ -28,14 +28,14 @@ public class Grade {
                             (data[6] != null && !data[6].isEmpty() ? Integer.parseInt(data[6]) : 0),
                             (data[7] != null && !data[7].isEmpty() ? Integer.parseInt(data[7]) : 0),
                             data[8],
-                            (data[10] != null && !data[10].isEmpty() ? Integer.parseInt(data[10]) : 0), "-");
+                            (data[10] != null && !data[10].isEmpty() ? Integer.parseInt(data[10]) : 0), "Não cursada");
                 } else {
                     // Lê colunas 0,1,3,5,6,7,8 e 9 da planilha da grade de 2019
                     novaMateria = new Materia(data[0], data[1], data[3], data[5],
                             (data[6] != null && !data[6].isEmpty() ? Integer.parseInt(data[6]) : 0),
                             (data[7] != null && !data[7].isEmpty() ? Integer.parseInt(data[7]) : 0),
                             data[8],
-                            (data[9] != null && !data[9].isEmpty() ? Integer.parseInt(data[9]) : 0), "-");
+                            (data[9] != null && !data[9].isEmpty() ? Integer.parseInt(data[9]) : 0), "Não cursada");
                 }
 
                 this.gradeBcc.add(novaMateria);
@@ -51,6 +51,10 @@ public class Grade {
         for (Materia m : this.gradeBcc) {
             System.out.println("Código da matéria: " + m.getCodDisciplina() + " Matéria: " + m.getNome());
         }
+    }
+
+    public ArrayList<Materia> getGradeBcc(){
+        return this.gradeBcc;
     }
 
 }

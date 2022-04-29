@@ -58,7 +58,6 @@ public class Materia {
         this.situacaoFreq = situacaoFreq;
     }
 
-
     public String getCodCurso() {
         return this.codCurso;
     }
