@@ -41,6 +41,8 @@ public class PedidoQuebra {
         return this.justificativa;
     }
 
+    
+
     public PedidoQuebra(ArrayList<Materia> materiasBarreiraNaoCursadas, ArrayList<Materia> materiasSolicitadas, int materiasObrigatoriasFaltantes, int materiasOptativasFaltantes, String justificativa){
         setMateriasBarreiraNaoCursadas(materiasBarreiraNaoCursadas);
         setMateriasSolicitadas(materiasSolicitadas);

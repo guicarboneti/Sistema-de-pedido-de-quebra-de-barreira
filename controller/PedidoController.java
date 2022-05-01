@@ -10,20 +10,28 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import model.DadosRecebidosFormulario;
+
 public class PedidoController implements ActionListener {
     private JTextField textNome;
     private JTextField textGrr;
     private JTextField textCaminho;
     private JTextArea textJustificativa;
     private JTextField textPeriodoAtual;
+    private DadosRecebidosFormulario dados;
 
     public PedidoController(JTextField textNome, JTextField textGrr,
-            JTextArea textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho) {
+            JTextArea textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho, DadosRecebidosFormulario dados) {
         this.textNome = textNome;
         this.textGrr = textGrr;
         this.textCaminho = textCaminho;
         this.textJustificativa = textJustificativa;
         this.textPeriodoAtual = textPeriodoAtual;
+        this.dados = dados;
     }
 
     @Override
@@ -57,8 +65,32 @@ public class PedidoController implements ActionListener {
         }
     }
 
+    public void salvaDadosPedido(){
+        this.dados.setGrr(this.textGrr.getText());
+        this.dados.setJustificativa(this.textJustificativa.getText());
+        this.dados.setNome(this.textNome.getText());
+        this.dados.setPeriodoAtual(this.textPeriodoAtual.getText());
+    }
+
+    public void geraArquivoPedido(String path) throws IOException{
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("info-pedido.txt"));
+		buffWrite.append("Nome: " + this.dados.getNome() + "\n");
+		buffWrite.append("Período Atual: " + this.dados.getPeriodoAtual() + "\n");
+		buffWrite.append("GRR: " + this.dados.getGrr() + "\n");
+		buffWrite.append("Grade: " + this.dados.getGradeAtual() + "\n");
+		buffWrite.append("Justificativa: " + this.dados.getJustificativa() + "\n");
+		buffWrite.append("Disciplinas solicitadas: " + this.dados.retornaMateriasSolicitadas() + "\n");
+		buffWrite.close();
+    }
+
     private void enviar() {
-        JOptionPane.showMessageDialog(null, "Pedido enviado! FAZER OUTRA TELA.");
+        JOptionPane.showMessageDialog(null, "Pedido enviado! Gerando arquivo de texto...");
+        salvaDadosPedido();
+        try {
+            geraArquivoPedido("info-pedido.txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         textNome.setText("");
         textGrr.setText("");
         textCaminho.setText("");

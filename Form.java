@@ -9,6 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JScrollBar;
 import java.awt.GridLayout;
 
+import model.DadosRecebidosFormulario;
+
 import controller.CheckBoxesController;
 import controller.PedidoController;
 import javax.swing.JButton;
@@ -43,6 +45,7 @@ public class Form extends JFrame {
     private JLabel lblPerodoAtual;
     private JTextField txtPeriodo;
     private JLabel lblQuaisDisciplinasVoc;
+    private DadosRecebidosFormulario dados;
 
     /**
      * Launch the application.
@@ -344,14 +347,16 @@ public class Form extends JFrame {
         btnEnviarPedido.setBounds(495, 516, 153, 70);
         panelPrincipal.add(btnEnviarPedido);
 
-        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho);
+        dados = new DadosRecebidosFormulario();
+
+        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho, dados);
         btnBuscar.addActionListener(pedido);
         btnEnviarPedido.addActionListener(pedido);
 
         CheckBoxesController boxes = new CheckBoxesController(chckbxCi, chckbxCi_1, chckbxCi_2, chckbxCi_3, chckbxCi_4,
                 chckbxCi_5, chckbxCi_6, chckbxCi_7, chckbxCi_8, chckbxCi_9, chckbxCi_10, chckbxCi_11, chckbxCi_12,
                 chckbxCi_13, chckbxCi_14, chckbxCi_15, chckbxCi_16, chckbxCi_17, chckbxCi_18, chckbxCi_19, chckbxCi_20,
-                chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos);
+                chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
         btnEnviarPedido.addActionListener(boxes);
     }
 }
