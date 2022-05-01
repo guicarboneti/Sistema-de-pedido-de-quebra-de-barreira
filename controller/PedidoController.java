@@ -5,47 +5,45 @@ import java.io.File;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import model.DadosRecebidosFormulario;
 
-public class PedidoController implements ActionListener {
-    private JTextField textNome;
+public class PedidoController implements ActionListener{
+	private JTextField textNome;
     private JTextField textGrr;
     private JTextField textCaminho;
     private JTextArea textJustificativa;
     private JTextField textPeriodoAtual;
     private DadosRecebidosFormulario dados;
+    
+	public PedidoController(JTextField textNome, JTextField textGrr,
+			JTextArea textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho) {
+		this.textNome = textNome;
+		this.textGrr = textGrr;
+		this.textCaminho = textCaminho;
+		this.textJustificativa = textJustificativa;
+		this.textPeriodoAtual = textPeriodoAtual;
+		dados = new DadosRecebidosFormulario();
+	}
 
-    public PedidoController(JTextField textNome, JTextField textGrr,
-            JTextArea textJustificativa, JTextField textPeriodoAtual, JTextField textCaminho, DadosRecebidosFormulario dados) {
-        this.textNome = textNome;
-        this.textGrr = textGrr;
-        this.textCaminho = textCaminho;
-        this.textJustificativa = textJustificativa;
-        this.textPeriodoAtual = textPeriodoAtual;
-        this.dados = dados;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String cmd = e.getActionCommand();
-        if (cmd.equals("Buscar")) {
-            procuraArquivo();
-        }
-        if (cmd.equals("Enviar Pedido")) {
-            enviar();
-        }
-    }
-
-    public void procuraArquivo() {
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String cmd = e.getActionCommand();
+		if(cmd.equals("Buscar")) {
+			procuraArquivo();
+		}
+		if(cmd.equals("Enviar Pedido")) {
+			guardarValores();
+			enviar();
+		}
+	}
+	
+	private void procuraArquivo() {
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Arquivos .csv", "csv");
 
         String diretorioBase = System.getProperty("user.home");
@@ -61,40 +59,27 @@ public class PedidoController implements ActionListener {
         int retorno = choose.showSaveDialog(null);
         if (retorno == JFileChooser.APPROVE_OPTION) {
             caminhoArquivo = choose.getSelectedFile().getAbsolutePath();
-            textCaminho.setText(caminhoArquivo);
+            this.textCaminho.setText(caminhoArquivo);
+            dados.setCaminho(caminhoArquivo);
         }
     }
-
-    public void salvaDadosPedido(){
-        this.dados.setGrr(this.textGrr.getText());
-        this.dados.setJustificativa(this.textJustificativa.getText());
-        this.dados.setNome(this.textNome.getText());
-        this.dados.setPeriodoAtual(this.textPeriodoAtual.getText());
-    }
-
-    public void geraArquivoPedido(String path) throws IOException{
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("info-pedido.txt"));
-		buffWrite.append("Nome: " + this.dados.getNome() + "\n");
-		buffWrite.append("Período Atual: " + this.dados.getPeriodoAtual() + "\n");
-		buffWrite.append("GRR: " + this.dados.getGrr() + "\n");
-		buffWrite.append("Grade: " + this.dados.getGradeAtual() + "\n");
-		buffWrite.append("Justificativa: " + this.dados.getJustificativa() + "\n");
-		buffWrite.append("Disciplinas solicitadas: " + this.dados.retornaMateriasSolicitadas() + "\n");
-		buffWrite.close();
-    }
-
-    private void enviar() {
-        JOptionPane.showMessageDialog(null, "Pedido enviado! Gerando arquivo de texto...");
-        salvaDadosPedido();
-        try {
-            geraArquivoPedido("info-pedido.txt");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        textNome.setText("");
-        textGrr.setText("");
-        textCaminho.setText("");
-        textJustificativa.setText("");
-        textPeriodoAtual.setText("");
-    }
+	
+	private void guardarValores() {
+		dados.setNome(this.textNome.getText());
+		dados.setGrr(this.textGrr.getText());
+		dados.setJustificativa(this.textJustificativa.getText());
+		dados.setPeriodoAtual(this.textPeriodoAtual.getText());
+	}
+	
+	private void enviar() {
+		JOptionPane.showMessageDialog(null, "Pedido enviado! FAZER OUTRA TELA.");
+        this.textNome.setText("");
+        this.textGrr.setText("");
+        this.textCaminho.setText("");
+        this.textJustificativa.setText("");
+        this.textPeriodoAtual.setText("");
+        this.textJustificativa.setText("");
+	}
+	
+	
 }
