@@ -9,7 +9,7 @@ conjunto de disciplinas que ele deseja cursar com informação sobre a prioridad
 
 THIAGO
 - [x] Cálculo do IRA do aluno com base no histórico 
-- [ ] O sistema deverá então apresentar uma tabela com as matérias cursadas por período e as
+- [x] O sistema deverá então apresentar uma tabela com as matérias cursadas por período e as
 matérias que faltam cursar para a barreira (TELA DE GRADE BCC DO ALUNO)
 
 GUILHERME
