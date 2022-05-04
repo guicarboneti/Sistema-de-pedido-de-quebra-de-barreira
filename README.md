@@ -1,10 +1,11 @@
 # Sistema Pedido de quebra de barreira
 
-
 # RESTANTES
+
 LETICIA
+
 - [ ] Terminar a interface gráfica para o aluno preencher a solicitação (O sistema deverá possibilitar que o aluno selecione um
-conjunto de disciplinas que ele deseja cursar com informação sobre a prioridade delas) 
+      conjunto de disciplinas que ele deseja cursar com informação sobre a prioridade delas)
 - [ ] Interface gráfica do restante das telas
 
 THIAGO
@@ -13,20 +14,22 @@ THIAGO
 matérias que faltam cursar para a barreira (TELA DE GRADE BCC DO ALUNO)
 
 GUILHERME
+
 - [ ] O sistema deverá calcular o número de disciplinas sugerido pelas regras aprovadas em colegiado e mostrar este resultado (TELA DE NÚMERO DE DISCIPLINAS SUGERIDAS)
-- [ ] O sistema deverá mostra ao aluno o conjunto de disciplinas ofertadas neste semestre que não foram cursadas neste semestre por ordem de período 
-(TELA DE DISCIPLINAS OFERTADAS)
+- [ ] O sistema deverá mostra ao aluno o conjunto de disciplinas ofertadas neste semestre que não foram cursadas neste semestre por ordem de período
+      (TELA DE DISCIPLINAS OFERTADAS)
 
 CRISTIANO
-- [ ] Gerar arquivo texto com os dados do pedido de quebra  (Quando o aluno selecionar enviar, o sistema deverá gerar um arquivo texto contendo os dados do pedido.)  - (TELA GERANDO ARQUIVO TEXTO)
+
+- [ ] Gerar arquivo texto com os dados do pedido de quebra (Quando o aluno selecionar enviar, o sistema deverá gerar um arquivo texto contendo os dados do pedido.) - (TELA GERANDO ARQUIVO TEXTO)
 - [ ] O sistema deve permitir salvar os dados do pedido em um arquivo de forma a permitir que o aluno os edite posteriormente.
 
-
 OUTROS
+
 - [ ] Implementar algum padrão visto em aula
 
-
 TELAS
+
 - TELA DE SOLICITAÇÃO
 - TELA DE GRADE BCC DO ALUNO
 - TELA DE NÚMERO DE DISCIPLINAS SUGERIDAS
@@ -110,12 +113,11 @@ FLUXO (REVER)
   Funções:
 
   - Get e Set materiasCursadas por semestre
-  
+
 - [ ] Classe VerificaSituacaoAluno
 
   - classe irá verificar qual a possível situação do aluno com base em seu histórico e regras de quebra de barreira;
   - retorna qual essa situação;
-
 
 ## Cadastrar o pedido de quebra
 
@@ -133,7 +135,7 @@ FLUXO (REVER)
 - [x] Fazer a interface gráfica para o aluno preencher a solicitação
 - [ ] Tirar da forma 'Absolut' e mudar para 'GridLayout'
 - [ ] Criar interface para aluno ver o pedido que foi enviado e disciplinas que já fez/não fez
-- [ ] Criar controlador para interfaces (controlar botões, caixas de seleção...)
+- [x] Criar controlador para interfaces (controlar botões, caixas de seleção...)
 
 ## Outros
 
