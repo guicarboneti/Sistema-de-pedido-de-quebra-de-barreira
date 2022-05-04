@@ -50,7 +50,7 @@ public class Form extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
+    public void formScreen() {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
