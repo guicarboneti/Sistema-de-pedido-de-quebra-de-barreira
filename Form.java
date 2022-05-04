@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import biblioteca.Aluno;
+
 import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.JScrollBar;
@@ -50,11 +53,11 @@ public class Form extends JFrame {
     /**
      * Launch the application.
      */
-    public void formScreen() {
+    public void formScreen(Aluno aluno) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Form frame = new Form();
+                    Form frame = new Form(aluno);
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -66,7 +69,7 @@ public class Form extends JFrame {
     /**
      * Create the frame.
      */
-    public Form() {
+    public Form(Aluno aluno) {
         setTitle("Pedido Quebra de Barreira");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1100, 644);
@@ -349,7 +352,7 @@ public class Form extends JFrame {
 
         dados = new DadosRecebidosFormulario();
 
-        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho, dados);
+        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho, dados,aluno);
         btnBuscar.addActionListener(pedido);
         btnEnviarPedido.addActionListener(pedido);
 
@@ -358,5 +361,12 @@ public class Form extends JFrame {
                 chckbxCi_13, chckbxCi_14, chckbxCi_15, chckbxCi_16, chckbxCi_17, chckbxCi_18, chckbxCi_19, chckbxCi_20,
                 chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
         btnEnviarPedido.addActionListener(boxes);
+
+        // btnEnviarPedido.addActionListener(txtNome);
+
+    }
+
+    public String getNome() {
+        return this.txtNome.getText();
     }
 }

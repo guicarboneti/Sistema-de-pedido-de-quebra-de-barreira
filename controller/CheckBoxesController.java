@@ -82,7 +82,6 @@ public class CheckBoxesController implements ActionListener {
         String button = e.getActionCommand();
         if (button.equals("Enviar Pedido")) {
             verificaMateriasSelecionadas();
-            guardaGradeAtual();
             resetaEscolhas();
         }
     }
@@ -136,14 +135,14 @@ public class CheckBoxesController implements ActionListener {
             this.dados.adicionaDisciplina(this.textDiscip2.getText());
     }
 
-    public void guardaGradeAtual() {
-        ButtonModel retorno = bgGrades.getSelection();
-        if (retorno.equals("2011")) {
-            this.dados.setGradeAtual("2011");
-        } else {
-            this.dados.setGradeAtual("2019");
-        }
-    }
+    // public void guardaGradeAtual() {
+    //     ButtonModel retorno = bgGrades.getSelection();
+    //     if (retorno.equals("2011")) {
+    //         this.dados.setGradeAtual("2011");
+    //     } else {
+    //         this.dados.setGradeAtual("2019");
+    //     }
+    // }
 
     private void resetaEscolhas() {
         this.cB_0.setSelected(false);

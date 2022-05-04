@@ -15,10 +15,15 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
+
+import biblioteca.Aluno;
+import biblioteca.Historico;
 
 import model.DadosRecebidosFormulario;
 import model.VisualizacaoTableModel;
@@ -41,11 +46,11 @@ public class VisualizacaoUsuario extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void getScreen(Aluno aluno) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VisualizacaoUsuario frame = new VisualizacaoUsuario();
+					VisualizacaoUsuario frame = new VisualizacaoUsuario(aluno);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +62,7 @@ public class VisualizacaoUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisualizacaoUsuario() {
+	public VisualizacaoUsuario(Aluno aluno) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 918, 446);
@@ -76,8 +81,8 @@ public class VisualizacaoUsuario extends JFrame {
 
 		// textNome = new JTextField(this.dados.getNome());
 		textNome = new JTextField();
-		textNome.setFont(new Font("Dialog", Font.PLAIN, 12));
-		textNome.setText("NOME");
+		textNome.setFont(new Font("Dialog",  Font.BOLD, 15));
+		textNome.setText(aluno.getNome());
 		textNome.setBackground(Color.WHITE);
 		textNome.setEditable(false);
 		textNome.setBounds(40, 35, 170, 19);
@@ -93,7 +98,7 @@ public class VisualizacaoUsuario extends JFrame {
 		// textGrr = new JTextField(this.dados.getGrr());
 		textGrr = new JTextField();
 		textGrr.setFont(new Font("Dialog", Font.PLAIN, 15));
-		textGrr.setText("GRR");
+		textGrr.setText(aluno.getGrr());
 		textGrr.setBackground(Color.WHITE);
 		textGrr.setEditable(false);
 		textGrr.setBounds(317, 35, 114, 19);
@@ -109,7 +114,8 @@ public class VisualizacaoUsuario extends JFrame {
 		// textPeriodo = new JTextField(this.dados.getPeriodoAtual());
 		textPeriodo = new JTextField();
 		textPeriodo.setFont(new Font("Dialog", Font.PLAIN, 15));
-		textPeriodo.setText("P");
+		String periodoAtual = String.valueOf(aluno.getPeriodo());
+		textPeriodo.setText(periodoAtual);
 		textPeriodo.setBackground(Color.WHITE);
 		textPeriodo.setEditable(false);
 		textPeriodo.setBounds(570, 35, 39, 19);
@@ -121,11 +127,11 @@ public class VisualizacaoUsuario extends JFrame {
 		lblIra.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblIra.setBounds(612, 35, 70, 15);
 		panel.add(lblIra);
-
-		// textIra = new JTextField(this.alunoCadastrado.getIra());
+		
 		textIra = new JTextField();
 		textIra.setFont(new Font("Dialog", Font.PLAIN, 15));
-		textIra.setText("IRA");
+		String ira = String.valueOf(round(aluno.getIra(),2));
+		textIra.setText(ira);
 		textIra.setBackground(Color.WHITE);
 		textIra.setEditable(false);
 		textIra.setBounds(655, 35, 70, 19);
@@ -144,10 +150,13 @@ public class VisualizacaoUsuario extends JFrame {
 		btnVer.setBounds(745, 158, 143, 62);
 		panel.add(btnVer);
 
+		Historico h = aluno.getHistorico();
+
 		textSituacao = new JTextArea();
 		textSituacao.setForeground(Color.BLACK);
-		textSituacao.setFont(new Font("Dialog", Font.PLAIN, 18));
-		textSituacao.setText("Você está no caso");
+		textSituacao.setFont(new Font("Dialog", Font.BOLD, 15));
+		// arrumar um jeito de centralizar
+		textSituacao.setText("Você está no caso\n\n\n           "+h.getDesempenhoUltPeriodo());
 		textSituacao.setBackground(new Color(255, 153, 51));
 		textSituacao.setEditable(false);
 		textSituacao.setBounds(745, 248, 143, 138);
@@ -156,17 +165,18 @@ public class VisualizacaoUsuario extends JFrame {
 		tableCodigos = new JTable();
 		tableCodigos.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tableCodigos.setBounds(40, 102, 519, 96);
+
 		tableCodigos.setModel(new DefaultTableModel(
 				new Object[][] {
-						{ "1", "2", "3" },
-						{ "CI1068", "CI1210", "CI1212" },
-						{ "CI1055", "CI1056", "CI1057" },
-						{ "CI1003", "CI1001", "CI1002" },
-						{ "CMA111", "CMA211", "CI1237" },
-						{ "CM304", "CM303", "CE009" },
+						{ "1º Período", "2º Período", "3º Período" },
+						{ h.gradeAluno.get(0).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(0).getSituacao(), h.gradeAluno.get(1).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(0).getSituacao(), h.gradeAluno.get(2).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(0).getSituacao() },
+						{ h.gradeAluno.get(0).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(1).getSituacao(), h.gradeAluno.get(1).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(1).getSituacao(),h.gradeAluno.get(2).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(1).getSituacao() },
+						{ h.gradeAluno.get(0).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(2).getSituacao(), h.gradeAluno.get(1).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(2).getSituacao(), h.gradeAluno.get(2).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(2).getSituacao() },
+						{ h.gradeAluno.get(0).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(3).getSituacao(), h.gradeAluno.get(1).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(3).getSituacao(), h.gradeAluno.get(2).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(3).getSituacao() },
+						{ h.gradeAluno.get(0).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(4).getSituacao(), h.gradeAluno.get(1).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(4).getSituacao(), h.gradeAluno.get(2).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(4).getSituacao() },
 				},
 				new String[] {
-						"1", "2", "3"
+						"0", "2", "3"
 				}) {
 			Class[] columnTypes = new Class[] {
 					String.class, String.class, String.class
@@ -178,5 +188,13 @@ public class VisualizacaoUsuario extends JFrame {
 		});
 		panel.add(tableCodigos);
 
+	}
+
+	private static double round(double value, int places) {
+		if (places < 0) throw new IllegalArgumentException();
+	
+		BigDecimal bd = new BigDecimal(Double.toString(value));
+		bd = bd.setScale(places, RoundingMode.HALF_UP);
+		return bd.doubleValue();
 	}
 }

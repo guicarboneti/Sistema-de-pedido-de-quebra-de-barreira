@@ -11,7 +11,6 @@ public class BotoesSegTelaController implements ActionListener {
         if (cmd.equals("Editar Pedido")) {
         }
         if (cmd.equals("Ver Pedido")) {
-
         }
     }
 

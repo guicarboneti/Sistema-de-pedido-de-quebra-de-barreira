@@ -47,7 +47,7 @@ public class VisualizacaoTableModel extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         switch (coluna) {
             case 0:
-                return linhas.get(linha).get(coluna);
+                return "a";
             case 1:
                 return "b";
             case 2:

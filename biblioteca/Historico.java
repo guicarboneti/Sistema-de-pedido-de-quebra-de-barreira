@@ -15,7 +15,7 @@ public class Historico {
     private ArrayList<Materia> materiasNaoCursadas = new ArrayList<Materia>();
     // ArrayPeriodos = [ [ ArrayList do 1º período ],[ ArrayList do 2º período ],[
     // ArrayList do 3º período ] ]
-    ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia>>(3);
+    public ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia>>(3);
 
     public Historico(String file, Grade grade) {
         try {
@@ -185,9 +185,7 @@ public class Historico {
         }
     }
 
-    public void setMateriasOfertadasNaoCursadas(Grade grade) {
-        System.out.println("=========== Matérias Ofertadas Que Não Foram Cursadas ===========");
-        
+    public void setMateriasOfertadasNaoCursadas(Grade grade) {        
         int i;
         String codigo;
         for (i=1;i<8;i++) {

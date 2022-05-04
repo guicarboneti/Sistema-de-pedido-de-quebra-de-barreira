@@ -4,6 +4,7 @@ public class Aluno {
     private String nome;
     private int periodoAtual;
     private double ira;
+    private String grr;
     private Historico historico;
 
     public void setNome(String nome) {
@@ -18,6 +19,10 @@ public class Aluno {
         this.ira = ira;
     }
 
+    public void setGrr(String grr) {
+        this.grr = grr;
+    }
+
     public String getNome() {
         return this.nome;
     }
@@ -30,16 +35,18 @@ public class Aluno {
         return this.ira;
     }
 
+    public String getGrr() {
+        return this.grr;
+    }
+
     public Historico getHistorico() {
         return this.historico;
     }
 
     public Aluno(){}
 
-    public Aluno(String nome,int periodoAtual, String file, Grade grade){
+    public Aluno( String file, Grade grade){
         this.historico = new Historico(file, grade);
-        this.nome = nome;
-        this.periodoAtual = periodoAtual;
         this.ira = this.historico.getIra();
     }
 

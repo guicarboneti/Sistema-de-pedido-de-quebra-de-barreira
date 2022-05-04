@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import biblioteca.Materia;
+
 public class DadosRecebidosFormulario {
     private String nome;
     private String grr;
@@ -9,7 +11,7 @@ public class DadosRecebidosFormulario {
     private String justificativa;
     private String periodoAtual;
     private ArrayList<String> materiasSolicitadas = new ArrayList<String>();
-    private String gradeAtual;
+    private ArrayList<Materia> gradeAtual = new ArrayList<Materia>();
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -51,11 +53,11 @@ public class DadosRecebidosFormulario {
         return this.periodoAtual;
     }
 
-    public void setGradeAtual(String grade) {
+    public void setGradeAtual(ArrayList<Materia> grade) {
         this.gradeAtual = grade;
     }
 
-    public String getGradeAtual() {
+    public ArrayList<Materia> getGradeAtual() {
         return this.gradeAtual;
     }
 
