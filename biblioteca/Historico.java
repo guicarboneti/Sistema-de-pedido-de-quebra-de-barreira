@@ -12,6 +12,7 @@ public class Historico {
     private ArrayList<Materia> materiasCursadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasMatriculadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasUltimoPeriodo = new ArrayList<Materia>();
+    private ArrayList<Materia> materiasNaoCursadas = new ArrayList<Materia>();
     // ArrayPeriodos = [ [ ArrayList do 1º período ],[ ArrayList do 2º período ],[
     // ArrayList do 3º período ] ]
     ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia>>(3);
@@ -57,6 +58,7 @@ public class Historico {
 
             this.setMateriasUltimoPeriodo(ultimoAno, 1);
             this.setGradeAluno(grade);
+            this.setMateriasOfertadasNaoCursadas(grade);
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -182,6 +184,35 @@ public class Historico {
             System.out.println("Média Final: " + m.getMediaFinal());
         }
     }
+
+    public void setMateriasOfertadasNaoCursadas(Grade grade) {
+        System.out.println("=========== Matérias Ofertadas Que Não Foram Cursadas ===========");
+        
+        int i;
+        String codigo;
+        for (i=1;i<8;i++) {
+            for (Materia m : grade.getGradeBcc()) { 
+                if (m.getPeriodo()==i) {
+                    codigo = m.getCodDisciplina();
+                    Materia materiaAux;
+                    materiaAux = getMateriaAluno(codigo, m.getPeriodo()); 
+                    if ((materiaAux.getCodDisciplina().equals("NULL"))) {
+                        this.materiasNaoCursadas.add(m);
+                    }
+                }
+            }
+        }
+    }
+
+    public void imprimeMateriaNaoCursadas() {
+        System.out.println("=========== Matérias Não Cursadas ===========");
+
+        for (Materia m : this.materiasNaoCursadas) {
+            System.out.println("Código Disciplina: " + m.getCodDisciplina());
+            System.out.println("Matéria: " + m.getNome());
+        }
+    }
+
 
     public void imprimeMateriasCursadas() {
         System.out.println("=========== Matérias Cursadas ===========");

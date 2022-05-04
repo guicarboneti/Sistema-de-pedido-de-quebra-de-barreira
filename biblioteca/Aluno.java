@@ -53,6 +53,7 @@ public class Aluno {
         this.historico.imprimeMateriasCursadas();
         this.historico.imprimeMateriasMatriculadas();
         this.historico.imprimeMateriasUltimoPeriodo();
+        this.historico.imprimeMateriaNaoCursadas();
         this.historico.imprimeGradeAluno();
 
     }
