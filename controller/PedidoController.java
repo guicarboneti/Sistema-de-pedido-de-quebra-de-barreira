@@ -96,8 +96,8 @@ public class PedidoController implements ActionListener {
         aluno.setPeriodo( Integer.parseInt(this.dados.getPeriodoAtual()));
         aluno.setGrr(this.dados.getGrr());
 
-        VisualizacaoUsuario interfaceTela1 = new VisualizacaoUsuario(aluno);
-        interfaceTela1.getScreen(aluno);
+        VisualizacaoUsuario interfaceTela1 = new VisualizacaoUsuario(aluno, dados);
+        interfaceTela1.getScreen(aluno, dados);
     }
 
     private void enviar() {

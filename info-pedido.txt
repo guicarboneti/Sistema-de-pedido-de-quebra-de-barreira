@@ -1,6 +1,6 @@
-Nome: dsadsad
+Nome: fds
 Ira: 0.6946666666666667
-Período Atual: 4
-GRR: 432344
-Justificativa: fdsfdsf
-Disciplinas solicitadas: [CI1007]
+Período Atual: 9
+GRR: 3423231312
+Justificativa: fdsfdsrrtr
+Disciplinas solicitadas: [CI1065, CI1058, CI1007]

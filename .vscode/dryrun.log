@@ -1,0 +1,17 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/cristianom/ufpr/paradinhas'
+javac -g biblioteca/Aluno.java
+javac -g biblioteca/Leitor.java
+javac -g biblioteca/Grade.java
+javac -g biblioteca/Materia.java
+javac -g biblioteca/Historico.java
+javac -g biblioteca/PedidoQuebra.java
+javac -g biblioteca/RegrasColegiado.java
+javac -g ProgramaPrincipal.java
+javac -g Form.java
+javac -g controller/CheckBoxesController.java
+javac -g controller/PedidoController.java
+javac -g view/VisualizacaoUsuario.java
+javac -g view/FormEdit.java
+make: Leaving directory '/home/cristianom/ufpr/paradinhas'
+ 
