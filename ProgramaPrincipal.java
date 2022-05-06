@@ -1,7 +1,5 @@
 import biblioteca.Aluno;
 import biblioteca.Grade;
-import biblioteca.RegrasColegiado;
-import view.VisualizacaoUsuario;
 import view.Form;
 
 public class ProgramaPrincipal {
@@ -13,7 +11,6 @@ public class ProgramaPrincipal {
 
         // faz a leitura dos dados do aluno
         Aluno aluno = new Aluno("planilhas/exemplo_trabalho_TAP_historico.csv", grade2011);
-        aluno.imprimeAluno(grade2011);
 
         Form interfaceFormulario = new Form(aluno);
         interfaceFormulario.formScreen(aluno);

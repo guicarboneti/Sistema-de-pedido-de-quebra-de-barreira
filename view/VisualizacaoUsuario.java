@@ -1,35 +1,21 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import java.io.*;
-import java.awt.Desktop;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.UIManager;
-import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.Font;
-import javax.swing.table.DefaultTableModel;
-
 import biblioteca.Aluno;
 import biblioteca.Historico;
 import controller.BotoesSegTelaController;
 import model.DadosRecebidosFormulario;
-import javax.swing.border.LineBorder;
 
 public class VisualizacaoUsuario extends JFrame {
 

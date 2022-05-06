@@ -1,39 +1,21 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import biblioteca.Aluno;
-
 import java.awt.Color;
 import javax.swing.JScrollPane;
-import javax.swing.JScrollBar;
-import java.awt.GridLayout;
-
 import model.DadosRecebidosFormulario;
-
 import controller.CheckBoxesController;
 import controller.PedidoController;
 import javax.swing.JButton;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-
 import javax.swing.ButtonGroup;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
-import javax.swing.JSeparator;
-import java.awt.SystemColor;
 import javax.swing.JCheckBox;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 

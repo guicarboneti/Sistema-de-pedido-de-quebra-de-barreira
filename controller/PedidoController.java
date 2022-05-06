@@ -3,21 +3,15 @@ package controller;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import biblioteca.Aluno;
-import biblioteca.Historico;
-import biblioteca.Materia;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import model.DadosRecebidosFormulario;
 import view.VisualizacaoUsuario;
 

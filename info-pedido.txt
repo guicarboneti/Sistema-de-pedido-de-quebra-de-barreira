@@ -1,6 +1,6 @@
-Nome: leticia fontanelli
+Nome: liolil
 Ira: 0.6946666666666667
-Período Atual: 3
-GRR: 20190569
-Justificativa: testetetstetdtstw
-Disciplinas solicitadas: [CI1164, CI1238, CI1218]
+Período Atual: 2
+GRR: 14142
+Justificativa: vyukuki
+Disciplinas solicitadas: [CI1058, CI1238, CI1162, CI1209, CI1316]
