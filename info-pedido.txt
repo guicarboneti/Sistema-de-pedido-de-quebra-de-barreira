@@ -1,6 +1,5 @@
-Nome: Thiago Ruiz
-Ira: 0.6946666666666667
-Período Atual: 4
-GRR: 2312
-Justificativa: dsasdsad
-Disciplinas solicitadas: [CI1221, CI1211]
+Nome: teste
+Período Atual: 3
+GRR: 323232
+Justificativa: dsadasdsaas
+Disciplinas solicitadas: [CI1058, CI1162, CI1163, CI1007, CI1064]

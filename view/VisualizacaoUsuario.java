@@ -3,6 +3,9 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import java.io.*;
+import java.awt.Desktop;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -28,6 +31,7 @@ import biblioteca.Historico;
 import model.DadosRecebidosFormulario;
 import model.VisualizacaoTableModel;
 import javax.swing.border.LineBorder;
+import view.FormEdit;
 
 public class VisualizacaoUsuario extends JFrame {
 
@@ -40,17 +44,17 @@ public class VisualizacaoUsuario extends JFrame {
 	private JTextField textIra;
 	private JTextArea textSituacao;
 	private JTable tableCodigos;
-	private DadosRecebidosFormulario dados = new DadosRecebidosFormulario();
+	// FormEdit interfaceFormulario = new FormEdit(aluno);
 	VisualizacaoTableModel table = new VisualizacaoTableModel();
 
 	/**
 	 * Launch the application.
 	 */
-	public void getScreen(Aluno aluno) {
+	public void getScreen(Aluno aluno, DadosRecebidosFormulario dados) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VisualizacaoUsuario frame = new VisualizacaoUsuario(aluno);
+					VisualizacaoUsuario frame = new VisualizacaoUsuario(aluno, dados);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -62,7 +66,7 @@ public class VisualizacaoUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisualizacaoUsuario(Aluno aluno) {
+	public VisualizacaoUsuario(Aluno aluno,  DadosRecebidosFormulario dados) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 918, 446);
@@ -145,10 +149,30 @@ public class VisualizacaoUsuario extends JFrame {
 		btnEditar.setBounds(745, 78, 143, 62);
 		panel.add(btnEditar);
 
+		btnEditar.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent ev){
+				FormEdit interfaceFormulario = new FormEdit(aluno, dados);
+				interfaceFormulario.formScreen(aluno, dados);
+			}
+		});
+		
+
 		JButton btnVer = new JButton("Ver Pedido");
 		btnVer.setBackground(new Color(51, 204, 204));
 		btnVer.setBounds(745, 158, 143, 62);
 		panel.add(btnVer);
+		btnVer.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent ev){
+				try {
+					File myFile = new File("./info-pedido.txt");
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex){
+					System.out.println("Erro ao abrir arquivo");
+				};
+			}
+		});
 
 		Historico h = aluno.getHistorico();
 
