@@ -13,63 +13,64 @@ import javax.swing.JTextField;
 import model.DadosRecebidosFormulario;
 
 public class CheckBoxesController implements ActionListener {
-    private JCheckBox cB_0;
-    private JCheckBox cB_1;
-    private JCheckBox cB_2;
-    private JCheckBox cB_3;
-    private JCheckBox cB_4;
-    private JCheckBox cB_5;
-    private JCheckBox cB_6;
-    private JCheckBox cB_7;
-    private JCheckBox cB_8;
-    private JCheckBox cB_9;
-    private JCheckBox cB_10;
-    private JCheckBox cB_11;
-    private JCheckBox cB_12;
-    private JCheckBox cB_13;
-    private JCheckBox cB_14;
-    private JCheckBox cB_15;
-    private JCheckBox cB_16;
-    private JCheckBox cB_17;
-    private JCheckBox cB_18;
-    private JCheckBox cB_19;
-    private JCheckBox cB_20;
-    private JCheckBox cB_21;
-    private JCheckBox cB_22;
+    private JCheckBox cB0;
+    private JCheckBox cB1;
+    private JCheckBox cB2;
+    private JCheckBox cB3;
+    private JCheckBox cB4;
+    private JCheckBox cB5;
+    private JCheckBox cB6;
+    private JCheckBox cB7;
+    private JCheckBox cB8;
+    private JCheckBox cB9;
+    private JCheckBox cB10;
+    private JCheckBox cB11;
+    private JCheckBox cB12;
+    private JCheckBox cB13;
+    private JCheckBox cB14;
+    private JCheckBox cB15;
+    private JCheckBox cB16;
+    private JCheckBox cB17;
+    private JCheckBox cB18;
+    private JCheckBox cB19;
+    private JCheckBox cB20;
+    private JCheckBox cB21;
+    private JCheckBox cB22;
     private JTextField textDiscip1;
     private JTextField textDiscip2;
     private ButtonGroup bgGrades;
     private ButtonGroup bgConflitos;
     private DadosRecebidosFormulario dados;
 
-    public CheckBoxesController(JCheckBox cB_0, JCheckBox cB_1, JCheckBox cB_2, JCheckBox cB_3, JCheckBox cB_4,
-            JCheckBox cB_5, JCheckBox cB_6, JCheckBox cB_7, JCheckBox cB_8, JCheckBox cB_9, JCheckBox cB_10,
-            JCheckBox cB_11, JCheckBox cB_12, JCheckBox cB_13, JCheckBox cB_14, JCheckBox cB_15, JCheckBox cB_16,
-            JCheckBox cB_17, JCheckBox cB_18, JCheckBox cB_19, JCheckBox cB_20, JCheckBox cB_21, JCheckBox cB_22,
-            JTextField textDiscip1, JTextField textDiscip2, ButtonGroup bgGrades, ButtonGroup bgConflitos,  DadosRecebidosFormulario dados) {
-        this.cB_0 = cB_0;
-        this.cB_1 = cB_1;
-        this.cB_2 = cB_2;
-        this.cB_3 = cB_3;
-        this.cB_4 = cB_4;
-        this.cB_5 = cB_5;
-        this.cB_6 = cB_6;
-        this.cB_7 = cB_7;
-        this.cB_8 = cB_8;
-        this.cB_9 = cB_9;
-        this.cB_10 = cB_10;
-        this.cB_11 = cB_11;
-        this.cB_12 = cB_12;
-        this.cB_13 = cB_13;
-        this.cB_14 = cB_14;
-        this.cB_15 = cB_15;
-        this.cB_16 = cB_16;
-        this.cB_17 = cB_17;
-        this.cB_18 = cB_18;
-        this.cB_19 = cB_19;
-        this.cB_20 = cB_20;
-        this.cB_21 = cB_21;
-        this.cB_22 = cB_22;
+    public CheckBoxesController(JCheckBox cB0, JCheckBox cB1, JCheckBox cB2, JCheckBox cB3, JCheckBox cB4,
+            JCheckBox cB5, JCheckBox cB6, JCheckBox cB7, JCheckBox cB8, JCheckBox cB9, JCheckBox cB10,
+            JCheckBox cB11, JCheckBox cB12, JCheckBox cB13, JCheckBox cB14, JCheckBox cB15, JCheckBox cB16,
+            JCheckBox cB17, JCheckBox cB18, JCheckBox cB19, JCheckBox cB20, JCheckBox cB21, JCheckBox cB22,
+            JTextField textDiscip1, JTextField textDiscip2, ButtonGroup bgGrades, ButtonGroup bgConflitos,
+            DadosRecebidosFormulario dados) {
+        this.cB0 = cB0;
+        this.cB1 = cB1;
+        this.cB2 = cB2;
+        this.cB3 = cB3;
+        this.cB4 = cB4;
+        this.cB5 = cB5;
+        this.cB6 = cB6;
+        this.cB7 = cB7;
+        this.cB8 = cB8;
+        this.cB9 = cB9;
+        this.cB10 = cB10;
+        this.cB11 = cB11;
+        this.cB12 = cB12;
+        this.cB13 = cB13;
+        this.cB14 = cB14;
+        this.cB15 = cB15;
+        this.cB16 = cB16;
+        this.cB17 = cB17;
+        this.cB18 = cB18;
+        this.cB19 = cB19;
+        this.cB20 = cB20;
+        this.cB21 = cB21;
+        this.cB22 = cB22;
         this.textDiscip1 = textDiscip1;
         this.textDiscip2 = textDiscip2;
         this.bgGrades = bgGrades;
@@ -87,87 +88,87 @@ public class CheckBoxesController implements ActionListener {
     }
 
     private void verificaMateriasSelecionadas() {
-        if (this.cB_1.isSelected())
+        if (this.cB1.isSelected())
             this.dados.adicionaDisciplina("CI1059");
-        if (this.cB_2.isSelected())
+        if (this.cB2.isSelected())
             this.dados.adicionaDisciplina("CI1350");
-        if (this.cB_0.isSelected())
+        if (this.cB0.isSelected())
             this.dados.adicionaDisciplina("CI1165");
-        if (this.cB_3.isSelected())
+        if (this.cB3.isSelected())
             this.dados.adicionaDisciplina("CI1164");
-        if (this.cB_4.isSelected())
+        if (this.cB4.isSelected())
             this.dados.adicionaDisciplina("CI1062");
-        if (this.cB_5.isSelected())
+        if (this.cB5.isSelected())
             this.dados.adicionaDisciplina("CI1065");
-        if (this.cB_6.isSelected())
+        if (this.cB6.isSelected())
             this.dados.adicionaDisciplina("CI1058");
-        if (this.cB_7.isSelected())
+        if (this.cB7.isSelected())
             this.dados.adicionaDisciplina("CI1238");
-        if (this.cB_8.isSelected())
+        if (this.cB8.isSelected())
             this.dados.adicionaDisciplina("CI1162");
-        if (this.cB_9.isSelected())
+        if (this.cB9.isSelected())
             this.dados.adicionaDisciplina("CI1215");
-        if (this.cB_10.isSelected())
+        if (this.cB10.isSelected())
             this.dados.adicionaDisciplina("CI1209");
-        if (this.cB_11.isSelected())
+        if (this.cB11.isSelected())
             this.dados.adicionaDisciplina("CI1218");
-        if (this.cB_12.isSelected())
+        if (this.cB12.isSelected())
             this.dados.adicionaDisciplina("CI1061");
-        if (this.cB_13.isSelected())
+        if (this.cB13.isSelected())
             this.dados.adicionaDisciplina("CI1316");
-        if (this.cB_14.isSelected())
+        if (this.cB14.isSelected())
             this.dados.adicionaDisciplina("CI1163");
-        if (this.cB_15.isSelected())
+        if (this.cB15.isSelected())
             this.dados.adicionaDisciplina("CI1221");
-        if (this.cB_16.isSelected())
+        if (this.cB16.isSelected())
             this.dados.adicionaDisciplina("CI1007");
-        if (this.cB_17.isSelected())
+        if (this.cB17.isSelected())
             this.dados.adicionaDisciplina("CI1211");
-        if (this.cB_18.isSelected())
+        if (this.cB18.isSelected())
             this.dados.adicionaDisciplina("CI1005");
-        if (this.cB_19.isSelected())
+        if (this.cB19.isSelected())
             this.dados.adicionaDisciplina("CI1064");
-        if (this.cB_20.isSelected())
+        if (this.cB20.isSelected())
             this.dados.adicionaDisciplina("CI1100");
-        if (this.cB_21.isSelected())
+        if (this.cB21.isSelected())
             this.dados.adicionaDisciplina(this.textDiscip1.getText());
-        if (this.cB_22.isSelected())
+        if (this.cB22.isSelected())
             this.dados.adicionaDisciplina(this.textDiscip2.getText());
     }
 
     // public void guardaGradeAtual() {
-    //     ButtonModel retorno = bgGrades.getSelection();
-    //     if (retorno.equals("2011")) {
-    //         this.dados.setGradeAtual("2011");
-    //     } else {
-    //         this.dados.setGradeAtual("2019");
-    //     }
+    // ButtonModel retorno = bgGrades.getSelection();
+    // if (retorno.equals("2011")) {
+    // this.dados.setGradeAtual("2011");
+    // } else {
+    // this.dados.setGradeAtual("2019");
+    // }
     // }
 
     private void resetaEscolhas() {
-        this.cB_0.setSelected(false);
-        this.cB_1.setSelected(false);
-        this.cB_2.setSelected(false);
-        this.cB_3.setSelected(false);
-        this.cB_4.setSelected(false);
-        this.cB_5.setSelected(false);
-        this.cB_6.setSelected(false);
-        this.cB_7.setSelected(false);
-        this.cB_8.setSelected(false);
-        this.cB_9.setSelected(false);
-        this.cB_10.setSelected(false);
-        this.cB_11.setSelected(false);
-        this.cB_12.setSelected(false);
-        this.cB_13.setSelected(false);
-        this.cB_14.setSelected(false);
-        this.cB_15.setSelected(false);
-        this.cB_16.setSelected(false);
-        this.cB_17.setSelected(false);
-        this.cB_18.setSelected(false);
-        this.cB_19.setSelected(false);
-        this.cB_20.setSelected(false);
-        this.cB_21.setSelected(false);
-        this.cB_22.setSelected(false);
+        this.cB0.setSelected(false);
+        this.cB1.setSelected(false);
+        this.cB2.setSelected(false);
+        this.cB3.setSelected(false);
+        this.cB4.setSelected(false);
+        this.cB5.setSelected(false);
+        this.cB6.setSelected(false);
+        this.cB7.setSelected(false);
+        this.cB8.setSelected(false);
+        this.cB9.setSelected(false);
+        this.cB10.setSelected(false);
+        this.cB11.setSelected(false);
+        this.cB12.setSelected(false);
+        this.cB13.setSelected(false);
+        this.cB14.setSelected(false);
+        this.cB15.setSelected(false);
+        this.cB16.setSelected(false);
+        this.cB17.setSelected(false);
+        this.cB18.setSelected(false);
+        this.cB19.setSelected(false);
+        this.cB20.setSelected(false);
+        this.cB21.setSelected(false);
+        this.cB22.setSelected(false);
         this.textDiscip1.setText("");
         this.textDiscip2.setText("");
         this.bgGrades.clearSelection();

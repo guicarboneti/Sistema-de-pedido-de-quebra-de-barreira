@@ -98,21 +98,21 @@ public class Form extends JFrame {
         lblGrade.setBounds(36, 102, 293, 29);
         panelPrincipal.add(lblGrade);
 
-        JCheckBox cB_Ano1 = new JCheckBox("2011");
-        cB_Ano1.setBackground(Color.WHITE);
-        cB_Ano1.setFont(new Font("Dialog", Font.BOLD, 14));
-        cB_Ano1.setBounds(328, 102, 68, 23);
-        panelPrincipal.add(cB_Ano1);
+        JCheckBox cBAno1 = new JCheckBox("2011");
+        cBAno1.setBackground(Color.WHITE);
+        cBAno1.setFont(new Font("Dialog", Font.BOLD, 14));
+        cBAno1.setBounds(328, 102, 68, 23);
+        panelPrincipal.add(cBAno1);
 
-        JCheckBox cB_Ano2 = new JCheckBox("2019");
-        cB_Ano2.setFont(new Font("Dialog", Font.BOLD, 14));
-        cB_Ano2.setBackground(Color.WHITE);
-        cB_Ano2.setBounds(400, 102, 76, 23);
-        panelPrincipal.add(cB_Ano2);
+        JCheckBox cBAno2 = new JCheckBox("2019");
+        cBAno2.setFont(new Font("Dialog", Font.BOLD, 14));
+        cBAno2.setBackground(Color.WHITE);
+        cBAno2.setBounds(400, 102, 76, 23);
+        panelPrincipal.add(cBAno2);
 
         ButtonGroup bgGrades = new ButtonGroup();
-        bgGrades.add(cB_Ano1);
-        bgGrades.add(cB_Ano2);
+        bgGrades.add(cBAno1);
+        bgGrades.add(cBAno2);
 
         lblHistrico = new JLabel("Histórico:");
         lblHistrico.setForeground(new Color(51, 51, 153));
@@ -148,125 +148,125 @@ public class Form extends JFrame {
         lblQuaisDisciplinasVoc.setBounds(36, 145, 411, 23);
         panelPrincipal.add(lblQuaisDisciplinasVoc);
 
-        JCheckBox chckbxCi_1 = new JCheckBox("CI1059");
-        chckbxCi_1.setBackground(Color.WHITE);
-        chckbxCi_1.setBounds(39, 186, 74, 23);
-        panelPrincipal.add(chckbxCi_1);
+        JCheckBox chckbxCi1 = new JCheckBox("CI1059");
+        chckbxCi1.setBackground(Color.WHITE);
+        chckbxCi1.setBounds(39, 186, 74, 23);
+        panelPrincipal.add(chckbxCi1);
 
-        JCheckBox chckbxCi_2 = new JCheckBox("CI1350");
-        chckbxCi_2.setBackground(Color.WHITE);
-        chckbxCi_2.setBounds(39, 226, 74, 23);
-        panelPrincipal.add(chckbxCi_2);
+        JCheckBox chckbxCi2 = new JCheckBox("CI1350");
+        chckbxCi2.setBackground(Color.WHITE);
+        chckbxCi2.setBounds(39, 226, 74, 23);
+        panelPrincipal.add(chckbxCi2);
 
         JCheckBox chckbxCi = new JCheckBox("CI1165");
         chckbxCi.setBackground(Color.WHITE);
         chckbxCi.setBounds(39, 266, 85, 23);
         panelPrincipal.add(chckbxCi);
 
-        JCheckBox chckbxCi_3 = new JCheckBox("CI1164");
-        chckbxCi_3.setBackground(Color.WHITE);
-        chckbxCi_3.setBounds(39, 306, 85, 23);
-        panelPrincipal.add(chckbxCi_3);
+        JCheckBox chckbxCi3 = new JCheckBox("CI1164");
+        chckbxCi3.setBackground(Color.WHITE);
+        chckbxCi3.setBounds(39, 306, 85, 23);
+        panelPrincipal.add(chckbxCi3);
 
-        JCheckBox chckbxCi_4 = new JCheckBox("CI1062");
-        chckbxCi_4.setBackground(Color.WHITE);
-        chckbxCi_4.setBounds(39, 346, 74, 23);
-        panelPrincipal.add(chckbxCi_4);
+        JCheckBox chckbxCi4 = new JCheckBox("CI1062");
+        chckbxCi4.setBackground(Color.WHITE);
+        chckbxCi4.setBounds(39, 346, 74, 23);
+        panelPrincipal.add(chckbxCi4);
 
-        JCheckBox chckbxCi_5 = new JCheckBox("CI1065");
-        chckbxCi_5.setBackground(Color.WHITE);
-        chckbxCi_5.setBounds(174, 186, 74, 23);
-        panelPrincipal.add(chckbxCi_5);
+        JCheckBox chckbxCi5 = new JCheckBox("CI1065");
+        chckbxCi5.setBackground(Color.WHITE);
+        chckbxCi5.setBounds(174, 186, 74, 23);
+        panelPrincipal.add(chckbxCi5);
 
-        JCheckBox chckbxCi_6 = new JCheckBox("CI1058");
-        chckbxCi_6.setBackground(Color.WHITE);
-        chckbxCi_6.setBounds(174, 226, 74, 23);
-        panelPrincipal.add(chckbxCi_6);
+        JCheckBox chckbxCi6 = new JCheckBox("CI1058");
+        chckbxCi6.setBackground(Color.WHITE);
+        chckbxCi6.setBounds(174, 226, 74, 23);
+        panelPrincipal.add(chckbxCi6);
 
-        JCheckBox chckbxCi_7 = new JCheckBox("CI1238");
-        chckbxCi_7.setBackground(Color.WHITE);
-        chckbxCi_7.setBounds(174, 266, 74, 23);
-        panelPrincipal.add(chckbxCi_7);
+        JCheckBox chckbxCi7 = new JCheckBox("CI1238");
+        chckbxCi7.setBackground(Color.WHITE);
+        chckbxCi7.setBounds(174, 266, 74, 23);
+        panelPrincipal.add(chckbxCi7);
 
-        JCheckBox chckbxCi_8 = new JCheckBox("CI1162");
-        chckbxCi_8.setBackground(Color.WHITE);
-        chckbxCi_8.setBounds(174, 306, 74, 23);
-        panelPrincipal.add(chckbxCi_8);
+        JCheckBox chckbxCi8 = new JCheckBox("CI1162");
+        chckbxCi8.setBackground(Color.WHITE);
+        chckbxCi8.setBounds(174, 306, 74, 23);
+        panelPrincipal.add(chckbxCi8);
 
-        JCheckBox chckbxCi_9 = new JCheckBox("CI1215");
-        chckbxCi_9.setBackground(Color.WHITE);
-        chckbxCi_9.setBounds(174, 346, 74, 23);
-        panelPrincipal.add(chckbxCi_9);
+        JCheckBox chckbxCi9 = new JCheckBox("CI1215");
+        chckbxCi9.setBackground(Color.WHITE);
+        chckbxCi9.setBounds(174, 346, 74, 23);
+        panelPrincipal.add(chckbxCi9);
 
-        JCheckBox chckbxCi_10 = new JCheckBox("CI1209");
-        chckbxCi_10.setBackground(Color.WHITE);
-        chckbxCi_10.setBounds(304, 186, 74, 23);
-        panelPrincipal.add(chckbxCi_10);
+        JCheckBox chckbxCi10 = new JCheckBox("CI1209");
+        chckbxCi10.setBackground(Color.WHITE);
+        chckbxCi10.setBounds(304, 186, 74, 23);
+        panelPrincipal.add(chckbxCi10);
 
-        JCheckBox chckbxCi_11 = new JCheckBox("CI1218");
-        chckbxCi_11.setBackground(Color.WHITE);
-        chckbxCi_11.setBounds(304, 226, 74, 23);
-        panelPrincipal.add(chckbxCi_11);
+        JCheckBox chckbxCi11 = new JCheckBox("CI1218");
+        chckbxCi11.setBackground(Color.WHITE);
+        chckbxCi11.setBounds(304, 226, 74, 23);
+        panelPrincipal.add(chckbxCi11);
 
-        JCheckBox chckbxCi_12 = new JCheckBox("CI1061");
-        chckbxCi_12.setBackground(Color.WHITE);
-        chckbxCi_12.setBounds(304, 266, 74, 23);
-        panelPrincipal.add(chckbxCi_12);
+        JCheckBox chckbxCi12 = new JCheckBox("CI1061");
+        chckbxCi12.setBackground(Color.WHITE);
+        chckbxCi12.setBounds(304, 266, 74, 23);
+        panelPrincipal.add(chckbxCi12);
 
-        JCheckBox chckbxCi_13 = new JCheckBox("CI1316");
-        chckbxCi_13.setBackground(Color.WHITE);
-        chckbxCi_13.setBounds(304, 306, 74, 23);
-        panelPrincipal.add(chckbxCi_13);
+        JCheckBox chckbxCi13 = new JCheckBox("CI1316");
+        chckbxCi13.setBackground(Color.WHITE);
+        chckbxCi13.setBounds(304, 306, 74, 23);
+        panelPrincipal.add(chckbxCi13);
 
-        JCheckBox chckbxCi_14 = new JCheckBox("CI1163");
-        chckbxCi_14.setBackground(Color.WHITE);
-        chckbxCi_14.setBounds(304, 346, 74, 23);
-        panelPrincipal.add(chckbxCi_14);
+        JCheckBox chckbxCi14 = new JCheckBox("CI1163");
+        chckbxCi14.setBackground(Color.WHITE);
+        chckbxCi14.setBounds(304, 346, 74, 23);
+        panelPrincipal.add(chckbxCi14);
 
-        JCheckBox chckbxCi_15 = new JCheckBox("CI1221");
-        chckbxCi_15.setBackground(Color.WHITE);
-        chckbxCi_15.setBounds(446, 186, 74, 23);
-        panelPrincipal.add(chckbxCi_15);
+        JCheckBox chckbxCi15 = new JCheckBox("CI1221");
+        chckbxCi15.setBackground(Color.WHITE);
+        chckbxCi15.setBounds(446, 186, 74, 23);
+        panelPrincipal.add(chckbxCi15);
 
-        JCheckBox chckbxCi_16 = new JCheckBox("CI1007");
-        chckbxCi_16.setBackground(Color.WHITE);
-        chckbxCi_16.setBounds(446, 226, 85, 23);
-        panelPrincipal.add(chckbxCi_16);
+        JCheckBox chckbxCi16 = new JCheckBox("CI1007");
+        chckbxCi16.setBackground(Color.WHITE);
+        chckbxCi16.setBounds(446, 226, 85, 23);
+        panelPrincipal.add(chckbxCi16);
 
-        JCheckBox chckbxCi_17 = new JCheckBox("CI1211");
-        chckbxCi_17.setBackground(Color.WHITE);
-        chckbxCi_17.setBounds(446, 266, 85, 23);
-        panelPrincipal.add(chckbxCi_17);
+        JCheckBox chckbxCi17 = new JCheckBox("CI1211");
+        chckbxCi17.setBackground(Color.WHITE);
+        chckbxCi17.setBounds(446, 266, 85, 23);
+        panelPrincipal.add(chckbxCi17);
 
-        JCheckBox chckbxCi_18 = new JCheckBox("CI1005");
-        chckbxCi_18.setBackground(Color.WHITE);
-        chckbxCi_18.setBounds(446, 306, 74, 23);
-        panelPrincipal.add(chckbxCi_18);
+        JCheckBox chckbxCi18 = new JCheckBox("CI1005");
+        chckbxCi18.setBackground(Color.WHITE);
+        chckbxCi18.setBounds(446, 306, 74, 23);
+        panelPrincipal.add(chckbxCi18);
 
-        JCheckBox chckbxCi_19 = new JCheckBox("CI1064");
-        chckbxCi_19.setBackground(Color.WHITE);
-        chckbxCi_19.setBounds(446, 346, 74, 23);
-        panelPrincipal.add(chckbxCi_19);
+        JCheckBox chckbxCi19 = new JCheckBox("CI1064");
+        chckbxCi19.setBackground(Color.WHITE);
+        chckbxCi19.setBounds(446, 346, 74, 23);
+        panelPrincipal.add(chckbxCi19);
 
-        JCheckBox chckbxCi_20 = new JCheckBox("CI1100");
-        chckbxCi_20.setBackground(Color.WHITE);
-        chckbxCi_20.setBounds(570, 186, 129, 23);
-        panelPrincipal.add(chckbxCi_20);
+        JCheckBox chckbxCi20 = new JCheckBox("CI1100");
+        chckbxCi20.setBackground(Color.WHITE);
+        chckbxCi20.setBounds(570, 186, 129, 23);
+        panelPrincipal.add(chckbxCi20);
 
-        JCheckBox chckbxCi_21 = new JCheckBox();
-        chckbxCi_21.setBackground(Color.WHITE);
-        chckbxCi_21.setBounds(570, 226, 23, 23);
-        panelPrincipal.add(chckbxCi_21);
+        JCheckBox chckbxCi21 = new JCheckBox();
+        chckbxCi21.setBackground(Color.WHITE);
+        chckbxCi21.setBounds(570, 226, 23, 23);
+        panelPrincipal.add(chckbxCi21);
 
         JTextField textDiscip1 = new JTextField();
         textDiscip1.setBounds(593, 226, 55, 19);
         panelPrincipal.add(textDiscip1);
         textDiscip1.setColumns(10);
 
-        JCheckBox chckbxCi_22 = new JCheckBox();
-        chckbxCi_22.setBackground(Color.WHITE);
-        chckbxCi_22.setBounds(570, 266, 23, 23);
-        panelPrincipal.add(chckbxCi_22);
+        JCheckBox chckbxCi22 = new JCheckBox();
+        chckbxCi22.setBackground(Color.WHITE);
+        chckbxCi22.setBounds(570, 266, 23, 23);
+        panelPrincipal.add(chckbxCi22);
 
         JTextField textDiscip2 = new JTextField();
         textDiscip2.setBounds(593, 266, 55, 19);
@@ -312,21 +312,21 @@ public class Form extends JFrame {
         lblDeHorrioCom.setBounds(36, 443, 440, 15);
         panelPrincipal.add(lblDeHorrioCom);
 
-        JCheckBox cB_Sim = new JCheckBox("Sim");
-        cB_Sim.setFont(new Font("Dialog", Font.BOLD, 14));
-        cB_Sim.setBackground(Color.WHITE);
-        cB_Sim.setBounds(486, 443, 55, 23);
-        panelPrincipal.add(cB_Sim);
+        JCheckBox cBSim = new JCheckBox("Sim");
+        cBSim.setFont(new Font("Dialog", Font.BOLD, 14));
+        cBSim.setBackground(Color.WHITE);
+        cBSim.setBounds(486, 443, 55, 23);
+        panelPrincipal.add(cBSim);
 
-        JCheckBox cB_No = new JCheckBox("Não");
-        cB_No.setFont(new Font("Dialog", Font.BOLD, 14));
-        cB_No.setBackground(Color.WHITE);
-        cB_No.setBounds(553, 443, 60, 23);
-        panelPrincipal.add(cB_No);
+        JCheckBox cBNo = new JCheckBox("Não");
+        cBNo.setFont(new Font("Dialog", Font.BOLD, 14));
+        cBNo.setBackground(Color.WHITE);
+        cBNo.setBounds(553, 443, 60, 23);
+        panelPrincipal.add(cBNo);
 
         ButtonGroup bgSemConflitos = new ButtonGroup();
-        bgSemConflitos.add(cB_Sim);
-        bgSemConflitos.add(cB_No);
+        bgSemConflitos.add(cBSim);
+        bgSemConflitos.add(cBNo);
 
         JButton btnEnviarPedido = new JButton("Enviar Pedido");
         btnEnviarPedido.setFont(new Font("Dialog", Font.BOLD, 15));
@@ -341,10 +341,10 @@ public class Form extends JFrame {
         btnBuscar.addActionListener(pedido);
         btnEnviarPedido.addActionListener(pedido);
 
-        CheckBoxesController boxes = new CheckBoxesController(chckbxCi, chckbxCi_1, chckbxCi_2, chckbxCi_3, chckbxCi_4,
-                chckbxCi_5, chckbxCi_6, chckbxCi_7, chckbxCi_8, chckbxCi_9, chckbxCi_10, chckbxCi_11, chckbxCi_12,
-                chckbxCi_13, chckbxCi_14, chckbxCi_15, chckbxCi_16, chckbxCi_17, chckbxCi_18, chckbxCi_19, chckbxCi_20,
-                chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
+        CheckBoxesController boxes = new CheckBoxesController(chckbxCi, chckbxCi1, chckbxCi2, chckbxCi3, chckbxCi4,
+                chckbxCi5, chckbxCi6, chckbxCi7, chckbxCi8, chckbxCi9, chckbxCi10, chckbxCi11, chckbxCi12,
+                chckbxCi13, chckbxCi14, chckbxCi15, chckbxCi16, chckbxCi17, chckbxCi18, chckbxCi19, chckbxCi20,
+                chckbxCi21, chckbxCi22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
         btnEnviarPedido.addActionListener(boxes);
     }
 }
