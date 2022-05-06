@@ -67,14 +67,14 @@ public class FormEdit extends JFrame {
         });
     }
 
-    public boolean confereMateria(String materia, DadosRecebidosFormulario dados){
+    public boolean confereMateria(String materia, DadosRecebidosFormulario dados) {
         boolean encontrado = false;
         for (int i = 0; i < dados.retornaMateriasSolicitadas().size(); i++) {
             if (dados.retornaMateriasSolicitadas().get(i) == materia) {
                 encontrado = true;
                 break;
             }
-         
+
         }
         return encontrado;
     }
@@ -102,24 +102,26 @@ public class FormEdit extends JFrame {
         lblNome.setFont(new Font("Dialog", Font.BOLD, 19));
         lblNome.setBounds(36, 42, 97, 29);
         panelPrincipal.add(lblNome);
-        
+
         txtNome = new JTextField();
         txtNome.setFont(new Font("Dialog", Font.PLAIN, 18));
         txtNome.setBounds(118, 42, 626, 29);
         txtNome.setText(aluno.getNome());
+        txtNome.setBorder(null);
         panelPrincipal.add(txtNome);
         txtNome.setColumns(10);
 
-        lblGrr = new JLabel("GRR: " + aluno.getGrr());
+        lblGrr = new JLabel("GRR: ");
         lblGrr.setForeground(new Color(51, 51, 153));
-        lblGrr.setFont(new Font("Dialog", Font.BOLD, 19));
-        lblGrr.setBounds(807, 42, 60, 29);
+        lblGrr.setFont(new Font("Dialog", Font.BOLD, 18));
+        lblGrr.setBounds(807, 42, 65, 29);
         panelPrincipal.add(lblGrr);
 
         txtGrr = new JTextField();
         txtGrr.setFont(new Font("Dialog", Font.PLAIN, 18));
-        txtGrr.setBounds(869, 42, 200, 29);
+        txtGrr.setBounds(875, 42, 150, 29);
         txtGrr.setText(aluno.getGrr());
+        txtGrr.setBorder(null);
         panelPrincipal.add(txtGrr);
         txtGrr.setColumns(10);
 
@@ -161,16 +163,17 @@ public class FormEdit extends JFrame {
         panelPrincipal.add(txtCaminho);
         txtCaminho.setColumns(10);
 
-        lblPerodoAtual = new JLabel("Período Atual: " + aluno.getPeriodo());
+        lblPerodoAtual = new JLabel("Período Atual: ");
         lblPerodoAtual.setForeground(new Color(51, 51, 153));
-        lblPerodoAtual.setFont(new Font("Dialog", Font.BOLD, 19));
-        lblPerodoAtual.setBounds(833, 102, 163, 29);
+        lblPerodoAtual.setFont(new Font("Dialog", Font.BOLD, 18));
+        lblPerodoAtual.setBounds(833, 102, 170, 29);
         panelPrincipal.add(lblPerodoAtual);
 
         txtPeriodo = new JTextField();
         txtPeriodo.setFont(new Font("Dialog", Font.PLAIN, 18));
-        txtPeriodo.setBounds(999, 102, 60, 29);
+        txtPeriodo.setBounds(1004, 102, 60, 29);
         txtPeriodo.setText(String.valueOf(aluno.getPeriodo()));
+        txtPeriodo.setBorder(null);
         panelPrincipal.add(txtPeriodo);
         txtPeriodo.setColumns(10);
 
@@ -310,7 +313,7 @@ public class FormEdit extends JFrame {
         lblJustificativa.setForeground(new Color(51, 51, 153));
         lblJustificativa.setFont(new Font("Dialog", Font.BOLD, 18));
         lblJustificativa.setBounds(730, 151, 339, 20);
-        
+
         panelPrincipal.add(lblJustificativa);
 
         JLabel lblInformeAOrdem = new JLabel("informe a ordem de prioridade");
@@ -371,7 +374,8 @@ public class FormEdit extends JFrame {
 
         dados = new DadosRecebidosFormulario();
 
-        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho, dados,aluno);
+        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho,
+                dados, aluno);
         btnBuscar.addActionListener(pedido);
         btnEnviarPedido.addActionListener(pedido);
 
@@ -380,8 +384,6 @@ public class FormEdit extends JFrame {
                 chckbxCi_13, chckbxCi_14, chckbxCi_15, chckbxCi_16, chckbxCi_17, chckbxCi_18, chckbxCi_19, chckbxCi_20,
                 chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
         btnEnviarPedido.addActionListener(boxes);
-
-        // btnEnviarPedido.addActionListener(txtNome);
 
     }
 

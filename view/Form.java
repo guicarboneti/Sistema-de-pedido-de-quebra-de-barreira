@@ -1,3 +1,5 @@
+package view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -352,7 +354,8 @@ public class Form extends JFrame {
 
         dados = new DadosRecebidosFormulario();
 
-        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho, dados,aluno);
+        PedidoController pedido = new PedidoController(txtNome, txtGrr, txtaJustificativa, txtPeriodo, txtCaminho,
+                dados, aluno);
         btnBuscar.addActionListener(pedido);
         btnEnviarPedido.addActionListener(pedido);
 
@@ -361,12 +364,5 @@ public class Form extends JFrame {
                 chckbxCi_13, chckbxCi_14, chckbxCi_15, chckbxCi_16, chckbxCi_17, chckbxCi_18, chckbxCi_19, chckbxCi_20,
                 chckbxCi_21, chckbxCi_22, textDiscip1, textDiscip2, bgGrades, bgSemConflitos, dados);
         btnEnviarPedido.addActionListener(boxes);
-
-        // btnEnviarPedido.addActionListener(txtNome);
-
-    }
-
-    public String getNome() {
-        return this.txtNome.getText();
     }
 }

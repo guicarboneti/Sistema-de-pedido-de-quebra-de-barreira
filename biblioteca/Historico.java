@@ -13,8 +13,6 @@ public class Historico {
     private ArrayList<Materia> materiasMatriculadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasUltimoPeriodo = new ArrayList<Materia>();
     private ArrayList<ArrayList<Materia>> materiasNaoCursadas = new ArrayList<ArrayList<Materia>>(8);
-    // ArrayPeriodos = [ [ ArrayList do 1º período ],[ ArrayList do 2º período ],[
-    // ArrayList do 3º período ] ]
     public ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia>>(3);
 
     public Historico(String file, Grade grade) {
@@ -59,7 +57,7 @@ public class Historico {
             this.setMateriasUltimoPeriodo(ultimoAno, 1);
             this.setGradeAluno(grade);
             this.setMateriasOfertadasNaoCursadas(grade);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -131,16 +129,13 @@ public class Historico {
         if (aluno.getHistorico().getIra() > 0.8) {
             numMaterias = "todos";
             return numMaterias;
-        }
-        else if (desempenho.equals("Bom")) {
+        } else if (desempenho.equals("Bom")) {
             numMaterias = "5";
             return numMaterias;
-        }
-        else if (desempenho.equals("Medio")) {
+        } else if (desempenho.equals("Medio")) {
             numMaterias = "4";
             return numMaterias;
-        }
-        else if (desempenho.equals("Ruim")) {
+        } else if (desempenho.equals("Ruim")) {
             numMaterias = "3";
             return numMaterias;
         }
@@ -260,22 +255,15 @@ public class Historico {
     public void imprimeMateriaNaoCursadas() {
         System.out.println("=========== Matérias Não Cursadas ===========");
 
-        // for (int i=0;i<8;i++) {
-        //     for (Materia m : this.materiasNaoCursadas.get(i)) {
-        //         System.out.println("Código Disciplina: " + m.getCodDisciplina());
-        //         System.out.println("Matéria: " + m.getNome());
-        //     }
-        // }
-
         for (int i = 0; i < this.materiasNaoCursadas.size(); i++) {
             for (int j = 0; j < this.materiasNaoCursadas.get(i).size(); j++) {
-                System.out.println("Código Disciplina: "+this.materiasNaoCursadas.get(i).get(j).getCodDisciplina() + " ");
-                System.out.println("Matéria: "+this.materiasNaoCursadas.get(i).get(j).getNome() + " ");
+                System.out.println(
+                        "Código Disciplina: " + this.materiasNaoCursadas.get(i).get(j).getCodDisciplina() + " ");
+                System.out.println("Matéria: " + this.materiasNaoCursadas.get(i).get(j).getNome() + " ");
             }
             System.out.println();
         }
     }
-
 
     public void imprimeMateriasCursadas() {
         System.out.println("=========== Matérias Cursadas ===========");

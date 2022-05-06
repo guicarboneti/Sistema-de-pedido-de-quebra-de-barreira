@@ -50,6 +50,8 @@ public class PedidoController implements ActionListener {
         }
         if (cmd.equals("Enviar Pedido")) {
             enviar();
+            VisualizacaoUsuario vu = new VisualizacaoUsuario(aluno, dados);
+            vu.setVisible(true);
         }
     }
 
@@ -93,11 +95,8 @@ public class PedidoController implements ActionListener {
 
         // SET DA ENTRADA DA TELA
         aluno.setNome(this.dados.getNome());
-        aluno.setPeriodo( Integer.parseInt(this.dados.getPeriodoAtual()));
+        aluno.setPeriodo(Integer.parseInt(this.dados.getPeriodoAtual()));
         aluno.setGrr(this.dados.getGrr());
-
-        VisualizacaoUsuario interfaceTela1 = new VisualizacaoUsuario(aluno, dados);
-        interfaceTela1.getScreen(aluno, dados);
     }
 
     private void enviar() {
@@ -105,7 +104,7 @@ public class PedidoController implements ActionListener {
         salvaDadosPedido();
         try {
             geraArquivoPedido("info-pedido.txt");
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }

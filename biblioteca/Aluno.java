@@ -43,14 +43,15 @@ public class Aluno {
         return this.historico;
     }
 
-    public Aluno(){}
+    public Aluno() {
+    }
 
-    public Aluno( String file, Grade grade){
+    public Aluno(String file, Grade grade) {
         this.historico = new Historico(file, grade);
         this.ira = this.historico.getIra();
     }
 
-    public void imprimeAluno(Grade grade){
+    public void imprimeAluno(Grade grade) {
         System.out.println("=========== Dados do Aluno ===========");
 
         System.out.println("Nome: " + this.nome);

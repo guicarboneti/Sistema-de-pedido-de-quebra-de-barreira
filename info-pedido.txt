@@ -1,6 +1,6 @@
-Nome: fds
+Nome: leticia fontanelli
 Ira: 0.6946666666666667
-Período Atual: 9
-GRR: 3423231312
-Justificativa: fdsfdsrrtr
-Disciplinas solicitadas: [CI1065, CI1058, CI1007]
+Período Atual: 3
+GRR: 20190569
+Justificativa: testetetstetdtstw
+Disciplinas solicitadas: [CI1164, CI1238, CI1218]
