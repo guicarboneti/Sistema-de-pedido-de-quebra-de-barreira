@@ -12,7 +12,7 @@ public class Historico {
     private ArrayList<Materia> materiasCursadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasMatriculadas = new ArrayList<Materia>();
     private ArrayList<Materia> materiasUltimoPeriodo = new ArrayList<Materia>();
-    private ArrayList<Materia> materiasNaoCursadas = new ArrayList<Materia>();
+    private ArrayList<ArrayList<Materia>> materiasNaoCursadas = new ArrayList<ArrayList<Materia>>(8);
     // ArrayPeriodos = [ [ ArrayList do 1º período ],[ ArrayList do 2º período ],[
     // ArrayList do 3º período ] ]
     public ArrayList<ArrayList<Materia>> gradeAluno = new ArrayList<ArrayList<Materia>>(3);
@@ -95,6 +95,15 @@ public class Historico {
         return retornoNull;
     }
 
+    public boolean verifyMateriasMatriculadas(String codigo) {
+        for (Materia m : this.materiasMatriculadas) {
+            if (m.getCodDisciplina().equals(codigo)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public float getAprovacaoUltimoPeriodo() {
         float cont = 0;
 
@@ -113,6 +122,29 @@ public class Historico {
                 cont++;
         }
         return cont;
+    }
+
+    public String getNumMaterias(Aluno aluno) {
+        String desempenho = "";
+        String numMaterias = "";
+        desempenho = aluno.getHistorico().getDesempenhoUltPeriodo();
+        if (aluno.getHistorico().getIra() > 0.8) {
+            numMaterias = "todos";
+            return numMaterias;
+        }
+        else if (desempenho.equals("Bom")) {
+            numMaterias = "5";
+            return numMaterias;
+        }
+        else if (desempenho.equals("Medio")) {
+            numMaterias = "4";
+            return numMaterias;
+        }
+        else if (desempenho.equals("Ruim")) {
+            numMaterias = "3";
+            return numMaterias;
+        }
+        return numMaterias;
     }
 
     public String getDesempenhoUltPeriodo() {
@@ -185,29 +217,62 @@ public class Historico {
         }
     }
 
-    public void setMateriasOfertadasNaoCursadas(Grade grade) {        
-        int i;
-        String codigo;
-        for (i=1;i<8;i++) {
-            for (Materia m : grade.getGradeBcc()) { 
-                if (m.getPeriodo()==i) {
-                    codigo = m.getCodDisciplina();
-                    Materia materiaAux;
-                    materiaAux = getMateriaAluno(codigo, m.getPeriodo()); 
-                    if ((materiaAux.getCodDisciplina().equals("NULL"))) {
-                        this.materiasNaoCursadas.add(m);
-                    }
-                }
+    public void setMateriasOfertadasNaoCursadas(Grade grade) {
+
+        ArrayList<Materia> periodo4 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo5 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo6 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo7 = new ArrayList<Materia>();
+        ArrayList<Materia> periodo8 = new ArrayList<Materia>();
+
+        for (Materia m : grade.getGradeBcc()) {
+
+            switch (m.getPeriodo()) {
+                case 4:
+                    periodo4.add(m);
+                    break;
+                case 5:
+                    periodo5.add(m);
+                    break;
+                case 6:
+                    periodo6.add(m);
+                    break;
+                case 7:
+                    periodo7.add(m);
+                    break;
+                case 8:
+                    periodo8.add(m);
+                    break;
             }
         }
+
+        this.materiasNaoCursadas.add(periodo4);
+        this.materiasNaoCursadas.add(periodo5);
+        this.materiasNaoCursadas.add(periodo6);
+        this.materiasNaoCursadas.add(periodo7);
+        this.materiasNaoCursadas.add(periodo8);
+    }
+
+    public ArrayList<ArrayList<Materia>> getMateriasNaoCursadas() {
+        return this.materiasNaoCursadas;
     }
 
     public void imprimeMateriaNaoCursadas() {
         System.out.println("=========== Matérias Não Cursadas ===========");
 
-        for (Materia m : this.materiasNaoCursadas) {
-            System.out.println("Código Disciplina: " + m.getCodDisciplina());
-            System.out.println("Matéria: " + m.getNome());
+        // for (int i=0;i<8;i++) {
+        //     for (Materia m : this.materiasNaoCursadas.get(i)) {
+        //         System.out.println("Código Disciplina: " + m.getCodDisciplina());
+        //         System.out.println("Matéria: " + m.getNome());
+        //     }
+        // }
+
+        for (int i = 0; i < this.materiasNaoCursadas.size(); i++) {
+            for (int j = 0; j < this.materiasNaoCursadas.get(i).size(); j++) {
+                System.out.println("Código Disciplina: "+this.materiasNaoCursadas.get(i).get(j).getCodDisciplina() + " ");
+                System.out.println("Matéria: "+this.materiasNaoCursadas.get(i).get(j).getNome() + " ");
+            }
+            System.out.println();
         }
     }
 

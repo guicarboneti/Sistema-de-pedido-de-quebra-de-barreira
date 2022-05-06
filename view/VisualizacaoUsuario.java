@@ -39,6 +39,9 @@ public class VisualizacaoUsuario extends JFrame {
 	private JLabel lblIra;
 	private JTextField textIra;
 	private JTextArea textSituacao;
+	private JTextArea tabela;
+	private JLabel legenda;
+	private JTextArea legendaCor;
 	private JTable tableCodigos;
 	private DadosRecebidosFormulario dados = new DadosRecebidosFormulario();
 	VisualizacaoTableModel table = new VisualizacaoTableModel();
@@ -75,7 +78,7 @@ public class VisualizacaoUsuario extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBorder(null);
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(12, 0, 906, 407);
+		panel.setBounds(12, 0, 906, 600);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -85,14 +88,14 @@ public class VisualizacaoUsuario extends JFrame {
 		textNome.setText(aluno.getNome());
 		textNome.setBackground(Color.WHITE);
 		textNome.setEditable(false);
-		textNome.setBounds(40, 35, 170, 19);
+		textNome.setBounds(40, 25, 170, 19);
 		textNome.setBorder(null);
 		panel.add(textNome);
 		textNome.setColumns(10);
 
 		JLabel lblMatrcula = new JLabel("Matrícula:");
 		lblMatrcula.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblMatrcula.setBounds(228, 35, 97, 15);
+		lblMatrcula.setBounds(228, 25, 97, 15);
 		panel.add(lblMatrcula);
 
 		// textGrr = new JTextField(this.dados.getGrr());
@@ -101,14 +104,14 @@ public class VisualizacaoUsuario extends JFrame {
 		textGrr.setText(aluno.getGrr());
 		textGrr.setBackground(Color.WHITE);
 		textGrr.setEditable(false);
-		textGrr.setBounds(317, 35, 114, 19);
+		textGrr.setBounds(317, 25, 114, 19);
 		textGrr.setBorder(null);
 		panel.add(textGrr);
 		textGrr.setColumns(10);
 
 		lblPerodoAtual = new JLabel("Período Atual:");
 		lblPerodoAtual.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblPerodoAtual.setBounds(448, 35, 119, 15);
+		lblPerodoAtual.setBounds(448, 25, 119, 15);
 		panel.add(lblPerodoAtual);
 
 		// textPeriodo = new JTextField(this.dados.getPeriodoAtual());
@@ -118,14 +121,14 @@ public class VisualizacaoUsuario extends JFrame {
 		textPeriodo.setText(periodoAtual);
 		textPeriodo.setBackground(Color.WHITE);
 		textPeriodo.setEditable(false);
-		textPeriodo.setBounds(570, 35, 39, 19);
+		textPeriodo.setBounds(570, 25, 39, 19);
 		textPeriodo.setBorder(null);
 		panel.add(textPeriodo);
 		textPeriodo.setColumns(10);
 
 		lblIra = new JLabel("IRA:");
 		lblIra.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblIra.setBounds(612, 35, 70, 15);
+		lblIra.setBounds(612, 25, 70, 15);
 		panel.add(lblIra);
 		
 		textIra = new JTextField();
@@ -134,7 +137,7 @@ public class VisualizacaoUsuario extends JFrame {
 		textIra.setText(ira);
 		textIra.setBackground(Color.WHITE);
 		textIra.setEditable(false);
-		textIra.setBounds(655, 35, 70, 19);
+		textIra.setBounds(655, 25, 70, 19);
 		textIra.setBorder(null);
 		panel.add(textIra);
 		textIra.setColumns(10);
@@ -153,43 +156,113 @@ public class VisualizacaoUsuario extends JFrame {
 		Historico h = aluno.getHistorico();
 
 		textSituacao = new JTextArea();
-		textSituacao.setForeground(Color.BLACK);
-		textSituacao.setFont(new Font("Dialog", Font.BOLD, 15));
+		textSituacao.setForeground(Color.WHITE);
+		textSituacao.setFont(new Font("Dialog", Font.BOLD, 12));
 		// arrumar um jeito de centralizar
-		textSituacao.setText("Você está no caso\n\n\n           "+h.getDesempenhoUltPeriodo());
-		textSituacao.setBackground(new Color(255, 153, 51));
+		textSituacao.setText("\n  Você está no caso\n              "+h.getDesempenhoUltPeriodo()+"\n\n   O colegiado deve\n          conceder\n       "+h.getNumMaterias(aluno)+" matrículas");
+		textSituacao.setBackground(new Color(1, 0, 241));
 		textSituacao.setEditable(false);
-		textSituacao.setBounds(745, 248, 143, 138);
+		textSituacao.setBounds(745, 248, 143, 118);
 		panel.add(textSituacao);
 
-		tableCodigos = new JTable();
-		tableCodigos.setBorder(new LineBorder(new Color(0, 0, 0)));
-		tableCodigos.setBounds(40, 102, 519, 96);
 
-		tableCodigos.setModel(new DefaultTableModel(
-				new Object[][] {
-						{ "1º Período", "2º Período", "3º Período" },
-						{ h.gradeAluno.get(0).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(0).getSituacao(), h.gradeAluno.get(1).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(0).getSituacao(), h.gradeAluno.get(2).get(0).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(0).getSituacao() },
-						{ h.gradeAluno.get(0).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(1).getSituacao(), h.gradeAluno.get(1).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(1).getSituacao(),h.gradeAluno.get(2).get(1).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(1).getSituacao() },
-						{ h.gradeAluno.get(0).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(2).getSituacao(), h.gradeAluno.get(1).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(2).getSituacao(), h.gradeAluno.get(2).get(2).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(2).getSituacao() },
-						{ h.gradeAluno.get(0).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(3).getSituacao(), h.gradeAluno.get(1).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(3).getSituacao(), h.gradeAluno.get(2).get(3).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(3).getSituacao() },
-						{ h.gradeAluno.get(0).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(0).get(4).getSituacao(), h.gradeAluno.get(1).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(1).get(4).getSituacao(), h.gradeAluno.get(2).get(4).getCodDisciplina() + " - " + h.gradeAluno.get(2).get(4).getSituacao() },
-				},
-				new String[] {
-						"0", "2", "3"
-				}) {
-			Class[] columnTypes = new Class[] {
-					String.class, String.class, String.class
-			};
-
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
+		int i, j, tamx=0, tamy=0;
+		for(i=1;i<9;i++) {
+			tabela = new JTextArea();
+			tabela.setForeground(Color.BLACK);
+			tabela.setFont(new Font("Dialog", Font.BOLD, 11));
+			tabela.setText("\n"+i+" período");
+			tabela.setBackground(new Color(199, 199, 199));
+			tabela.setEditable(false);
+			tabela.setBounds(40+tamx, 60, 60, 50);
+			panel.add(tabela);
+			tamx+=70;
+		}
+		
+		// 87, 161,3 - Verde
+		// 105,110, 255 - azul
+		// 233, 233, 233 - cinza
+		// arrumar um jeito de centralizar
+		tamx=0;
+		for(i=0; i<h.gradeAluno.size(); i++) {
+			tamy=0;
+			for(j=0; j<h.gradeAluno.get(i).size(); j++) {
+				tabela = new JTextArea();
+				tabela.setForeground(Color.BLACK);
+				tabela.setFont(new Font("Dialog", Font.BOLD, 12));
+				tabela.setText("\n  "+h.gradeAluno.get(i).get(j).getCodDisciplina());
+				if (h.gradeAluno.get(i).get(j).getSituacao().equals("Aprovado")) {
+					tabela.setBackground(new Color(87, 161, 3));
+				}
+				else if (h.verifyMateriasMatriculadas(h.gradeAluno.get(i).get(j).getCodDisciplina())) {
+					tabela.setBackground(new Color(105,110, 255));
+				}
+				else {
+					tabela.setBackground(new Color(233, 233, 233));
+				}
+				tabela.setEditable(false);
+				tabela.setBounds(40+tamx, 120+tamy, 60, 50);
+				panel.add(tabela);
+				tamy += 60;
 			}
-		});
-		panel.add(tableCodigos);
+			tamx += 70;
+		}
+		tamx=0;
+		for(i=0; i<h.getMateriasNaoCursadas().size(); i++) {
+			tamy=0;
+			for(j=0; j<h.getMateriasNaoCursadas().get(i).size(); j++) {
+				if (!h.getMateriasNaoCursadas().get(i).get(j).getTipoDisciplina().contains("Opt") || !h.getMateriasNaoCursadas().get(i).get(j).getNome().toLowerCase().contains("trab")) {
+					tabela = new JTextArea();
+					tabela.setForeground(Color.BLACK);
+					tabela.setFont(new Font("Dialog", Font.BOLD, 12));
+					tabela.setText("\n  "+h.getMateriasNaoCursadas().get(i).get(j).getCodDisciplina());
+					tabela.setBackground(new Color(233, 233, 233));
+					tabela.setEditable(false);
+					tabela.setBounds(250+tamx, 120+tamy, 60, 50);
+					panel.add(tabela);
+					tamy += 60;
+				}
+			}
+			tamx += 70;
+		}
+		legendaCor = new JTextArea();
+		legendaCor.setForeground(Color.BLACK);
+		legendaCor.setFont(new Font("Dialog", Font.BOLD, 12));
+		legendaCor.setBackground(new Color(105,110, 255));
+		legendaCor.setEditable(false);
+		legendaCor.setBounds(40, 450, 20, 20);
+		panel.add(legendaCor);
+		legenda = new JLabel("Disciplinas matriculadas");
+		legenda.setFont(new Font("Dialog", Font.BOLD, 15));
+		legenda.setBounds(70, 412, 200, 100);
+		panel.add(legenda);
 
+		legendaCor = new JTextArea();
+		legendaCor.setForeground(Color.BLACK);
+		legendaCor.setFont(new Font("Dialog", Font.BOLD, 12));
+		legendaCor.setBackground(new Color(87, 161, 3));
+		legendaCor.setEditable(false);
+		legendaCor.setBounds(40, 480, 20, 20);
+		panel.add(legendaCor);
+		legenda = new JLabel("Disciplinas aprovadas");
+		legenda.setFont(new Font("Dialog", Font.BOLD, 15));
+		legenda.setBounds(70, 442, 200, 100);
+		panel.add(legenda);
+
+		legendaCor = new JTextArea();
+		legendaCor.setForeground(Color.BLACK);
+		legendaCor.setFont(new Font("Dialog", Font.BOLD, 12));
+		legendaCor.setBackground(new Color(233, 233, 233));
+		legendaCor.setEditable(false);
+		legendaCor.setBounds(40, 510, 20, 20);
+		panel.add(legendaCor);
+		legenda = new JLabel("Disciplinas não cursadas");
+		legenda.setFont(new Font("Dialog", Font.BOLD, 15));
+		legenda.setBounds(70, 472, 200, 100);
+		panel.add(legenda);
 	}
 
+	
 	private static double round(double value, int places) {
 		if (places < 0) throw new IllegalArgumentException();
 	

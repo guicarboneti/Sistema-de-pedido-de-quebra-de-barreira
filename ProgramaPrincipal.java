@@ -15,14 +15,10 @@ public class ProgramaPrincipal {
 
         // faz a leitura dos dados do aluno
         Aluno aluno = new Aluno("planilhas/exemplo_trabalho_TAP_historico.csv",grade2011);
-        // aluno.imprimeAluno(grade2011);
+        aluno.imprimeAluno(grade2011);
 
         Form interfaceFormulario = new Form(aluno);
         interfaceFormulario.formScreen(aluno);
-        
-        // RegrasColegiado regrasColegiado = new RegrasColegiado();
-        // if (regrasColegiado.testaRegras(aluno, pedidoQuebra))
-        //     System.out.println("Podem ser concedidas " + regrasColegiado.getNumMaterias(aluno) + " matrículas");
 
     }
 }

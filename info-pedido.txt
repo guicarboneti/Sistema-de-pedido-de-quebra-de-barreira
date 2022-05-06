@@ -1,6 +1,6 @@
-Nome: Thiago Ruiz
+Nome: dsadsad
 Ira: 0.6946666666666667
 Período Atual: 4
-GRR: 2312
-Justificativa: dsasdsad
-Disciplinas solicitadas: [CI1221, CI1211]
+GRR: 432344
+Justificativa: fdsfdsf
+Disciplinas solicitadas: [CI1007]
