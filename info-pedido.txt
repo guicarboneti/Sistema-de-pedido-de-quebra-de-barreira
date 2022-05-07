@@ -1,6 +1,6 @@
-Nome: liolil
+Nome: Guilherme
 Ira: 0.6946666666666667
-Período Atual: 2
-GRR: 14142
-Justificativa: vyukuki
-Disciplinas solicitadas: [CI1058, CI1238, CI1162, CI1209, CI1316]
+Período Atual: 3
+GRR: 43243243
+Justificativa: fdsfdsfds
+Disciplinas solicitadas: [CI1007, CI1211]

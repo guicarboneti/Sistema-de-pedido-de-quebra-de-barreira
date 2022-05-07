@@ -127,7 +127,7 @@ public class Historico {
         String numMaterias = "";
         desempenho = aluno.getHistorico().getDesempenhoUltPeriodo();
         if (aluno.getHistorico().getIra() > 0.8) {
-            numMaterias = "todos";
+            numMaterias = "todas as";
             return numMaterias;
         } else if (desempenho.equals("Bom")) {
             numMaterias = "5";
